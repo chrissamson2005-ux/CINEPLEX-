@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="ro">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>CINEPLEX</title>
 
 <style>
 
 /* =========================
-   RESET
+   GENERAL
 ========================= */
 
 * {
@@ -40,59 +35,52 @@ body {
 ========================= */
 
 .navbar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
 
     width: 100%;
-
-    z-index: 100;
+    z-index: 20;
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 18px 5%;
+    padding: 20px 5%;
 
     background:
         linear-gradient(
-            #000,
+            to bottom,
+            rgba(0,0,0,.95),
             transparent
         );
 }
 
 .logo {
     color: white;
-
     text-decoration: none;
 
-    font-size: 30px;
-
+    font-size: 32px;
     font-weight: 900;
-
-    letter-spacing: -2px;
 }
 
 .logo span {
-    color: #ffb3bd;
+    color: #e50914;
 }
 
 .nav-links {
     display: flex;
-
     gap: 25px;
 }
 
 .nav-links a {
     color: white;
-
     text-decoration: none;
-
-    transition: .2s;
+    font-weight: bold;
 }
 
 .nav-links a:hover {
-    color: #ffd5da;
+    color: #e50914;
 }
 
 
@@ -101,98 +89,117 @@ body {
 ========================= */
 
 .hero {
-    min-height: 720px;
-
-    padding: 150px 6%;
-
-    display: flex;
-    align-items: center;
-
     position: relative;
+
+    width: 100%;
+    height: 720px;
 
     overflow: hidden;
 
-    background:
-        linear-gradient(
-            110deg,
-            #ff1744 0%,
-            #e50914 35%,
-            #c40018 65%,
-            #8b0015 100%
-        );
+    background: #000;
 }
 
-.hero::before {
-    content: "";
 
+/* =========================
+   VIDEO BACKGROUND
+========================= */
+
+.hero-video {
     position: absolute;
 
-    width: 650px;
-    height: 650px;
+    top: 0;
+    left: 0;
 
-    right: -180px;
-    top: -250px;
+    width: 100%;
+    height: 100%;
 
-    background:
-        rgba(
-            255,
-            255,
-            255,
-            0.13
-        );
+    object-fit: cover;
 
-    border-radius: 50%;
+    z-index: 1;
 
-    filter: blur(30px);
+    background: #000;
 }
 
-.hero::after {
-    content: "";
 
+/* =========================
+   ROSU + ALBASTRU PESTE VIDEO
+========================= */
+
+.hero-overlay {
     position: absolute;
 
     inset: 0;
 
+    z-index: 2;
+
+    pointer-events: none;
+
     background:
         linear-gradient(
             90deg,
-            rgba(
-                255,
-                255,
-                255,
-                0.08
-            ),
-            transparent 55%
+            rgba(220, 0, 30, 0.80) 0%,
+            rgba(120, 10, 80, 0.55) 45%,
+            rgba(0, 80, 255, 0.75) 100%
         );
 
-    pointer-events: none;
+    mix-blend-mode: screen;
 }
 
+
+/* =========================
+   FADE JOS
+========================= */
+
+.hero-bottom {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 250px;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            transparent,
+            #080808
+        );
+}
+
+
+/* =========================
+   TEXT + BUTOANE
+========================= */
+
 .hero-content {
+    position: absolute;
+
+    left: 6%;
+    bottom: 110px;
+
     max-width: 650px;
 
-    position: relative;
+    z-index: 10;
 
-    z-index: 2;
+    pointer-events: auto;
 }
 
 .hero-small {
-    color: white;
+    color: #e50914;
 
     font-weight: bold;
 
-    letter-spacing: 3px;
+    letter-spacing: 4px;
 
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 .hero h1 {
-    font-size:
-        clamp(
-            55px,
-            8vw,
-            95px
-        );
+    font-size: clamp(50px, 8vw, 90px);
 
     line-height: .9;
 
@@ -200,75 +207,75 @@ body {
 }
 
 .hero h1 span {
-    color: #ffd5da;
+    color: #e50914;
 }
 
 .hero p {
-    color: white;
+    margin-top: 22px;
+
+    color: #ddd;
 
     font-size: 18px;
 
     line-height: 1.6;
-
-    margin-top: 25px;
 }
+
+
+/* =========================
+   BUTOANE
+========================= */
 
 .buttons {
     display: flex;
 
     gap: 12px;
 
-    margin-top: 30px;
+    margin-top: 28px;
 }
 
 .btn {
     border: none;
 
+    border-radius: 6px;
+
     padding: 14px 22px;
 
-    border-radius: 5px;
+    font-size: 15px;
 
     font-weight: bold;
 
+    cursor: pointer;
+
     text-decoration: none;
 
-    cursor: pointer;
+    display: inline-block;
 }
 
-.btn-red {
+.btn-white {
     background: white;
 
-    color: #b00018;
+    color: #111;
 }
 
-.btn-red:hover {
-    background: #ffe8eb;
-}
-
-.btn-gray {
-    background:
-        rgba(
-            0,
-            0,
-            0,
-            .25
-        );
+.btn-white:hover {
+    background: #e50914;
 
     color: white;
+}
 
-    border:
-        1px solid
-        rgba(
-            255,
-            255,
-            255,
-            .3
-        );
+.btn-dark {
+    background: rgba(60,60,60,.9);
+
+    color: white;
+}
+
+.btn-dark:hover {
+    background: #555;
 }
 
 
 /* =========================
-   SECTIONS
+   SECTIUNI
 ========================= */
 
 section {
@@ -293,18 +300,17 @@ section {
 
     overflow-x: auto;
 
-    padding:
-        10px 0 30px;
+    padding: 10px 0 30px;
 }
 
 .movie {
+    position: relative;
+
     min-width: 220px;
 
     height: 320px;
 
     border-radius: 8px;
-
-    position: relative;
 
     overflow: hidden;
 
@@ -314,9 +320,9 @@ section {
 }
 
 .movie:hover {
-    transform: scale(1.07);
+    transform: scale(1.06);
 
-    z-index: 3;
+    z-index: 5;
 }
 
 .movie::after {
@@ -328,7 +334,7 @@ section {
 
     background:
         linear-gradient(
-            transparent 40%,
+            transparent 35%,
             #000
         );
 }
@@ -336,20 +342,20 @@ section {
 .movie-info {
     position: absolute;
 
-    bottom: 18px;
     left: 18px;
+    bottom: 18px;
 
     z-index: 2;
 }
 
 .movie-info h3 {
-    font-size: 19px;
-
     margin-bottom: 6px;
+
+    font-size: 19px;
 }
 
 .movie-info p {
-    color: #bbb;
+    color: #aaa;
 
     font-size: 12px;
 }
@@ -399,22 +405,14 @@ section {
         );
 }
 
-.poster5 {
-    background:
-        linear-gradient(
-            145deg,
-            #b56cff,
-            #25063b,
-            #050505
-        );
-}
-
 
 /* =========================
    SERIALE
 ========================= */
 
 .series-card {
+    position: relative;
+
     min-width: 300px;
 
     height: 180px;
@@ -423,15 +421,13 @@ section {
 
     overflow: hidden;
 
-    position: relative;
-
     cursor: pointer;
 
     background:
         linear-gradient(
             135deg,
-            #ff1744,
-            #65000d
+            #e50914,
+            #4a0008
         );
 
     transition: .3s;
@@ -444,10 +440,8 @@ section {
 .series-card div {
     position: absolute;
 
-    bottom: 18px;
     left: 18px;
-
-    z-index: 2;
+    bottom: 18px;
 }
 
 .series-card h3 {
@@ -470,9 +464,9 @@ section {
 
     margin-top: 25px;
 
-    background: #151515;
-
     padding: 25px;
+
+    background: #151515;
 
     border-radius: 10px;
 }
@@ -482,9 +476,9 @@ section {
 }
 
 .episode {
-    padding: 18px;
-
     margin-top: 10px;
+
+    padding: 18px;
 
     background: #222;
 
@@ -499,31 +493,107 @@ section {
 
 
 /* =========================
-   EXPERIENȚĂ
+   PLAYER FILM
+========================= */
+
+.video-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.95);
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-box {
+    position: relative;
+
+    width: min(1000px, 100%);
+
+    padding: 20px;
+
+    background: #111;
+
+    border-radius: 12px;
+}
+
+.video-box video {
+    width: 100%;
+
+    max-height: 70vh;
+
+    background: #000;
+
+    border-radius: 8px;
+}
+
+.video-box h2 {
+    margin-top: 15px;
+}
+
+.close-video {
+    position: absolute;
+
+    top: 25px;
+    right: 25px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #000;
+
+    color: white;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 10;
+}
+
+.close-video:hover {
+    background: #e50914;
+}
+
+
+/* =========================
+   EXPERIENTA
 ========================= */
 
 .features {
     display: grid;
 
     grid-template-columns:
-        repeat(
-            3,
-            1fr
-        );
+        repeat(3, 1fr);
 
     gap: 20px;
 }
 
 .feature {
+    padding: 30px;
+
     background: #151515;
 
-    border:
-        1px solid
-        #292929;
+    border: 1px solid #292929;
 
     border-radius: 10px;
-
-    padding: 30px;
 }
 
 .feature-icon {
@@ -544,12 +614,11 @@ section {
 
 
 /* =========================
-   BANNER FINAL
+   BANNER
 ========================= */
 
 .final-banner {
-    margin:
-        30px 5% 60px;
+    margin: 30px 5% 60px;
 
     padding: 70px 30px;
 
@@ -568,11 +637,7 @@ section {
 
 .final-banner h2 {
     font-size:
-        clamp(
-            30px,
-            5vw,
-            55px
-        );
+        clamp(30px, 5vw, 55px);
 
     margin-bottom: 15px;
 }
@@ -585,117 +650,25 @@ section {
 
 
 /* =========================
-   PLAYER
-========================= */
-
-.video-modal {
-    position: fixed;
-
-    inset: 0;
-
-    background:
-        rgba(
-            0,
-            0,
-            0,
-            .94
-        );
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    z-index: 9999;
-
-    padding: 25px;
-}
-
-.video-modal.active {
-    display: flex;
-}
-
-.video-box {
-    width:
-        min(
-            1100px,
-            100%
-        );
-
-    background: #111;
-
-    padding: 20px;
-
-    border-radius: 12px;
-
-    position: relative;
-}
-
-.video-box video {
-    width: 100%;
-
-    max-height: 70vh;
-
-    background: black;
-
-    border-radius: 8px;
-}
-
-.video-box h2 {
-    margin-top: 15px;
-}
-
-.close-video {
-    position: absolute;
-
-    right: 30px;
-    top: 30px;
-
-    z-index: 5;
-
-    width: 42px;
-    height: 42px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #000;
-
-    color: white;
-
-    font-size: 20px;
-
-    cursor: pointer;
-}
-
-.close-video:hover {
-    background: #e50914;
-}
-
-
-/* =========================
    FOOTER
 ========================= */
 
 footer {
-    border-top:
-        1px solid
-        #222;
-
     padding: 40px 5%;
+
+    border-top: 1px solid #222;
 
     color: #777;
 }
 
 .footer-logo {
-    font-size: 25px;
-
-    font-weight: bold;
+    margin-bottom: 10px;
 
     color: white;
 
-    margin-bottom: 10px;
+    font-size: 25px;
+
+    font-weight: bold;
 }
 
 .footer-logo span {
@@ -704,19 +677,33 @@ footer {
 
 
 /* =========================
-   MOBILE
+   MOBIL
 ========================= */
 
-@media(max-width: 800px) {
+@media(max-width:800px) {
 
     .nav-links {
         display: none;
     }
 
     .hero {
-        min-height: 650px;
+        height: 650px;
+    }
 
-        padding-top: 130px;
+    .hero-content {
+        left: 6%;
+        right: 6%;
+        bottom: 80px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
     }
 
     .features {
@@ -731,11 +718,6 @@ footer {
         min-width: 260px;
     }
 
-    .buttons {
-        flex-direction: column;
-
-        align-items: flex-start;
-    }
 }
 
 </style>
@@ -752,11 +734,10 @@ footer {
 
 <nav class="navbar">
 
-    <a
-        href="#"
-        class="logo"
-    >
+    <a href="#" class="logo">
+
         CINE<span>PLEX</span>
+
     </a>
 
 
@@ -784,45 +765,89 @@ footer {
 
 
 <!-- =========================
-     HERO
+     TRAILER BACKGROUND
 ========================= -->
 
 <header class="hero">
 
+
+    <video
+        id="trailer"
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+
+        <source
+            src="filme/film1.mp4"
+            type="video/mp4"
+        >
+
+    </video>
+
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-bottom"></div>
+
+
     <div class="hero-content">
 
+
         <div class="hero-small">
+
             CINEPLEX
+
         </div>
 
+
         <h1>
+
             FILMUL<br>
+
             ÎNCEPE
             <span>AICI.</span>
+
         </h1>
 
+
         <p>
+
             Filme, seriale și experiențe
             de cinema într-un singur loc.
+
         </p>
+
 
         <div class="buttons">
 
+
+            <button
+                type="button"
+                class="btn btn-white"
+                onclick="playTrailer()"
+            >
+
+                ▶ PLAY TRAILER
+
+            </button>
+
+
             <a
                 href="#filme"
-                class="btn btn-red"
+                class="btn btn-dark"
             >
-                ▶ Vezi filmele
+
+                🎬 Vezi filmele
+
             </a>
 
-            <a
-                href="#seriale"
-                class="btn btn-gray"
-            >
-                📺 Vezi serialele
-            </a>
 
         </div>
+
 
     </div>
 
@@ -835,9 +860,13 @@ footer {
 
 <section id="filme">
 
+
     <h2 class="title">
+
         🎬 Filme populare
+
     </h2>
+
 
     <div class="movie-row">
 
@@ -868,7 +897,7 @@ footer {
         <div
             class="movie poster2"
             onclick="openVideo(
-                'filme/film2.mp4',
+                'filme/film1.mp4',
                 'BEYOND BLUE'
             )"
         >
@@ -891,7 +920,7 @@ footer {
         <div
             class="movie poster3"
             onclick="openVideo(
-                'filme/film3.mp4',
+                'filme/film1.mp4',
                 'LAST SIGNAL'
             )"
         >
@@ -914,7 +943,7 @@ footer {
         <div
             class="movie poster4"
             onclick="openVideo(
-                'filme/film4.mp4',
+                'filme/film1.mp4',
                 'WILD HEART'
             )"
         >
@@ -945,9 +974,13 @@ footer {
 
 <section id="seriale">
 
+
     <h2 class="title">
+
         📺 Seriale
+
     </h2>
+
 
     <div class="movie-row">
 
@@ -1015,7 +1048,7 @@ footer {
     </div>
 
 
-    <!-- THE LAST CITY -->
+    <!-- SERIA 1 -->
 
     <div
         id="series1"
@@ -1023,46 +1056,54 @@ footer {
     >
 
         <h2>
+
             THE LAST CITY — Episoade
+
         </h2>
 
 
         <div
             class="episode"
             onclick="openVideo(
-                'seriale/last-city-ep1.mp4',
+                'filme/film1.mp4',
                 'The Last City — Episodul 1'
             )"
         >
+
             ▶ Episodul 1 — Începutul
+
         </div>
 
 
         <div
             class="episode"
             onclick="openVideo(
-                'seriale/last-city-ep2.mp4',
+                'filme/film1.mp4',
                 'The Last City — Episodul 2'
             )"
         >
+
             ▶ Episodul 2 — Semnalul
+
         </div>
 
 
         <div
             class="episode"
             onclick="openVideo(
-                'seriale/last-city-ep3.mp4',
+                'filme/film1.mp4',
                 'The Last City — Episodul 3'
             )"
         >
+
             ▶ Episodul 3 — Fuga
+
         </div>
 
     </div>
 
 
-    <!-- DARK SIGNAL -->
+    <!-- SERIA 2 -->
 
     <div
         id="series2"
@@ -1070,35 +1111,41 @@ footer {
     >
 
         <h2>
+
             DARK SIGNAL — Episoade
+
         </h2>
 
 
         <div
             class="episode"
             onclick="openVideo(
-                'seriale/dark-signal-ep1.mp4',
+                'filme/film1.mp4',
                 'Dark Signal — Episodul 1'
             )"
         >
+
             ▶ Episodul 1
+
         </div>
 
 
         <div
             class="episode"
             onclick="openVideo(
-                'seriale/dark-signal-ep2.mp4',
+                'filme/film1.mp4',
                 'Dark Signal — Episodul 2'
             )"
         >
+
             ▶ Episodul 2
+
         </div>
 
     </div>
 
 
-    <!-- WILD WORLD -->
+    <!-- SERIA 3 -->
 
     <div
         id="series3"
@@ -1106,29 +1153,35 @@ footer {
     >
 
         <h2>
+
             WILD WORLD — Episoade
+
         </h2>
 
 
         <div
             class="episode"
             onclick="openVideo(
-                'seriale/wild-world-ep1.mp4',
+                'filme/film1.mp4',
                 'Wild World — Episodul 1'
             )"
         >
+
             ▶ Episodul 1
+
         </div>
 
 
         <div
             class="episode"
             onclick="openVideo(
-                'seriale/wild-world-ep2.mp4',
+                'filme/film1.mp4',
                 'Wild World — Episodul 2'
             )"
         >
+
             ▶ Episodul 2
+
         </div>
 
     </div>
@@ -1145,20 +1198,25 @@ footer {
     class="video-modal"
 >
 
+
     <div class="video-box">
 
 
         <button
+            type="button"
             class="close-video"
             onclick="closeVideo()"
         >
+
             ✕
+
         </button>
 
 
         <video
             id="videoPlayer"
             controls
+            playsinline
         >
 
             <source
@@ -1167,14 +1225,13 @@ footer {
                 type="video/mp4"
             >
 
-            Browserul tău nu suportă
-            redarea video.
-
         </video>
 
 
         <h2 id="videoTitle">
+
             Film
+
         </h2>
 
 
@@ -1184,13 +1241,16 @@ footer {
 
 
 <!-- =========================
-     EXPERIENȚĂ
+     EXPERIENTA
 ========================= -->
 
 <section id="experienta">
 
+
     <h2 class="title">
+
         Experiența CINEPLEX
+
     </h2>
 
 
@@ -1262,8 +1322,11 @@ footer {
 
 <section id="top">
 
+
     <h2 class="title">
+
         🔥 Top 10 CINEPLEX
+
     </h2>
 
 
@@ -1292,7 +1355,7 @@ footer {
         <div
             class="movie poster3"
             onclick="openVideo(
-                'filme/film3.mp4',
+                'filme/film1.mp4',
                 'LAST SIGNAL'
             )"
         >
@@ -1311,7 +1374,7 @@ footer {
         <div
             class="movie poster2"
             onclick="openVideo(
-                'filme/film2.mp4',
+                'filme/film1.mp4',
                 'BEYOND BLUE'
             )"
         >
@@ -1338,21 +1401,30 @@ footer {
 
 <div class="final-banner">
 
+
     <h2>
+
         Gata pentru următorul film?
+
     </h2>
 
+
     <p>
+
         Alege un film și începe vizionarea.
+
     </p>
 
 
     <a
         href="#filme"
-        class="btn btn-red"
+        class="btn btn-white"
     >
+
         🎬 Vezi filmele
+
     </a>
+
 
 </div>
 
@@ -1363,27 +1435,73 @@ footer {
 
 <footer>
 
+
     <div class="footer-logo">
+
         CINE<span>PLEX</span>
+
     </div>
 
+
     <p>
+
         © 2026 CINEPLEX România —
         Concept demo
+
     </p>
+
 
 </footer>
 
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
-
 <script>
+
+/* =========================
+   TRAILER AUTOMAT
+========================= */
+
+const trailer =
+    document.getElementById("trailer");
+
+
+function playTrailer() {
+
+    trailer.muted = true;
+
+    trailer.play()
+        .then(function() {
+
+            console.log(
+                "Trailer pornit!"
+            );
+
+        })
+        .catch(function(error) {
+
+            console.log(
+                "Trailerul nu poate porni:",
+                error
+            );
+
+        });
+
+}
+
+
+/* PORNIRE AUTOMATA */
+
+window.addEventListener(
+    "load",
+    function() {
+
+        playTrailer();
+
+    }
+);
 
 
 /* =========================
-   PLAYER VIDEO
+   PLAYER FILM
 ========================= */
 
 function openVideo(video, title) {
@@ -1393,18 +1511,15 @@ function openVideo(video, title) {
             "videoModal"
         );
 
-
     const player =
         document.getElementById(
             "videoPlayer"
         );
 
-
     const source =
         document.getElementById(
             "videoSource"
         );
-
 
     const titleElement =
         document.getElementById(
@@ -1414,13 +1529,10 @@ function openVideo(video, title) {
 
     source.src = video;
 
-
     titleElement.textContent =
         title;
 
-
     player.load();
-
 
     modal.classList.add(
         "active"
@@ -1428,15 +1540,13 @@ function openVideo(video, title) {
 
 
     player.play()
-        .catch(
-            () => {}
-        );
+        .catch(function() {});
 
 }
 
 
 /* =========================
-   ÎNCHIDE VIDEO
+   INCHIDE PLAYER
 ========================= */
 
 function closeVideo() {
@@ -1446,7 +1556,6 @@ function closeVideo() {
             "videoModal"
         );
 
-
     const player =
         document.getElementById(
             "videoPlayer"
@@ -1455,9 +1564,7 @@ function closeVideo() {
 
     player.pause();
 
-
     player.currentTime = 0;
-
 
     modal.classList.remove(
         "active"
@@ -1467,7 +1574,7 @@ function closeVideo() {
 
 
 /* =========================
-   ESCAPE
+   ESC
 ========================= */
 
 document.addEventListener(
@@ -1475,8 +1582,7 @@ document.addEventListener(
     function(event) {
 
         if (
-            event.key ===
-            "Escape"
+            event.key === "Escape"
         ) {
 
             closeVideo();
@@ -1488,7 +1594,7 @@ document.addEventListener(
 
 
 /* =========================
-   EPISOADE
+   SERIALE
 ========================= */
 
 function showEpisodes(id) {
@@ -1511,13 +1617,13 @@ function showEpisodes(id) {
 
 
     const selected =
-        document.getElementById(
-            id
-        );
+        document.getElementById(id);
 
 
     if (!selected) {
+
         return;
+
     }
 
 
@@ -1527,38 +1633,17 @@ function showEpisodes(id) {
 
 
     selected.scrollIntoView({
+
         behavior: "smooth",
+
         block: "center"
+
     });
 
 }
-
-
-/* =========================
-   CLICK PE FUNDALUL PLAYERULUI
-========================= */
-
-document
-    .getElementById("videoModal")
-    .addEventListener(
-        "click",
-        function(event) {
-
-            if (
-                event.target ===
-                this
-            ) {
-
-                closeVideo();
-
-            }
-
-        }
-    );
 
 </script>
 
 
 </body>
-
 </html>
