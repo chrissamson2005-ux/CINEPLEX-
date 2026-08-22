@@ -60,7 +60,10 @@ body {
     color: #ffd5da;
 }
 
+/* BUTON AUTENTIFICARE */
+
 .login {
+    display: inline-block;
     background: white;
     color: #b00018;
     border: none;
@@ -68,9 +71,14 @@ body {
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
 }
 
-/* HERO - BACKGROUND ROSU */
+.login:hover {
+    background: #ffe8eb;
+}
+
+/* HERO */
 
 .hero {
     min-height: 720px;
@@ -90,8 +98,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
-/* LUMINĂ ÎN BACKGROUND */
 
 .hero::before {
     content: "";
@@ -550,9 +556,9 @@ footer {
         <a href="#experienta">Experiență</a>
     </div>
 
-    <button class="login">
+    <a href="login.html" class="login">
         Autentificare
-    </button>
+    </a>
 
 </nav>
 
