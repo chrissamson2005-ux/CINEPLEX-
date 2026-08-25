@@ -3,10 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>CINEPLEX</title>
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
     margin:0;
@@ -25,13 +28,17 @@ body{
     overflow-x:hidden;
 }
 
-/* ================= SIDEBAR ================= */
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
 
 .sidebar{
     position:fixed;
     left:0;
     top:0;
     bottom:0;
+
     width:240px;
 
     padding:30px 18px;
@@ -52,6 +59,7 @@ body{
 
     font-size:30px;
     font-weight:1000;
+
     letter-spacing:3px;
 
     margin-bottom:45px;
@@ -65,6 +73,7 @@ body{
 
     -webkit-background-clip:text;
     background-clip:text;
+
     color:transparent;
 }
 
@@ -75,6 +84,7 @@ body{
     font-weight:bold;
 
     padding:0 15px;
+
     margin-bottom:10px;
 
     text-transform:uppercase;
@@ -84,12 +94,14 @@ body{
 .menu{
     display:flex;
     flex-direction:column;
+
     gap:7px;
 }
 
 .menu a{
     display:flex;
     align-items:center;
+
     gap:14px;
 
     padding:13px 15px;
@@ -97,6 +109,7 @@ body{
     border-radius:9px;
 
     color:#aeb3c0;
+
     text-decoration:none;
 
     font-size:15px;
@@ -109,6 +122,7 @@ body{
 
 .menu a:hover{
     background:#171b27;
+
     color:white;
 }
 
@@ -126,20 +140,26 @@ body{
 
 .icon{
     width:22px;
+
     text-align:center;
+
     font-size:18px;
 }
 
 .sidebar-bottom{
     position:absolute;
+
     left:18px;
     right:18px;
+
     bottom:25px;
 }
 
 .profile-small{
     display:flex;
+
     align-items:center;
+
     gap:12px;
 
     padding:12px;
@@ -156,6 +176,7 @@ body{
     border-radius:9px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -180,24 +201,33 @@ body{
     margin-top:3px;
 }
 
-/* ================= MAIN ================= */
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 .main{
     margin-left:240px;
+
     min-height:100vh;
 }
 
-/* ================= TOPBAR ================= */
+
+/* =====================================================
+   TOPBAR
+===================================================== */
 
 .topbar{
     height:78px;
 
     display:flex;
+
     align-items:center;
 
     padding:0 38px;
 
     position:sticky;
+
     top:0;
 
     z-index:900;
@@ -211,10 +241,14 @@ body{
 
 .page-title{
     font-size:18px;
+
     font-weight:bold;
 }
 
-/* ================= HERO ================= */
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
     min-height:550px;
@@ -222,6 +256,7 @@ body{
     position:relative;
 
     display:flex;
+
     align-items:flex-end;
 
     padding:70px 50px 65px;
@@ -249,36 +284,43 @@ body{
 
 .hero::before{
     content:"";
+
     position:absolute;
+
     inset:0;
 
-    background:linear-gradient(
-        90deg,
-        #07080d 0%,
-        rgba(7,8,13,.35) 52%,
-        rgba(7,8,13,.05) 100%
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #07080d 0%,
+            rgba(7,8,13,.35) 52%,
+            rgba(7,8,13,.05) 100%
+        );
 }
 
 .hero::after{
     content:"";
+
     position:absolute;
+
     left:0;
     right:0;
     bottom:0;
 
     height:170px;
 
-    background:linear-gradient(
-        transparent,
-        #07080d
-    );
+    background:
+        linear-gradient(
+            transparent,
+            #07080d
+        );
 }
 
 .hero-content{
     max-width:620px;
 
     position:relative;
+
     z-index:2;
 }
 
@@ -299,6 +341,7 @@ body{
 
 .hero h1{
     font-size:64px;
+
     line-height:.95;
 
     margin-bottom:17px;
@@ -310,6 +353,7 @@ body{
 
 .hero-info{
     display:flex;
+
     gap:15px;
 
     color:#b6bbc7;
@@ -333,6 +377,7 @@ body{
 
 .buttons{
     display:flex;
+
     gap:10px;
 }
 
@@ -344,6 +389,7 @@ body{
     border-radius:6px;
 
     font-size:14px;
+
     font-weight:bold;
 
     cursor:pointer;
@@ -357,20 +403,26 @@ body{
 
 .watch{
     background:white;
+
     color:black;
 }
 
 .more{
     background:#303542;
+
     color:white;
 }
 
 .red{
     background:#e50914;
+
     color:white;
 }
 
-/* ================= CONTENT ================= */
+
+/* =====================================================
+   CONTENT
+===================================================== */
 
 .content{
     padding:0 38px 50px;
@@ -378,6 +430,7 @@ body{
     margin-top:-5px;
 
     position:relative;
+
     z-index:5;
 }
 
@@ -387,7 +440,9 @@ body{
 
 .section-title{
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     font-size:22px;
@@ -419,7 +474,10 @@ body{
     color:#ff1744;
 }
 
-/* ================= MOVIES ================= */
+
+/* =====================================================
+   MOVIES
+===================================================== */
 
 .movies{
     display:grid;
@@ -466,10 +524,6 @@ body{
 
     overflow:hidden;
 }
-
-/*
-   POSTERE FĂRĂ EMOJI
-*/
 
 .p1{
     background:
@@ -585,7 +639,10 @@ body{
     margin-top:6px;
 }
 
-/* ================= PROGRAM ================= */
+
+/* =====================================================
+   PROGRAM
+===================================================== */
 
 .program{
     display:grid;
@@ -636,7 +693,10 @@ body{
     margin-top:5px;
 }
 
-/* ================= LISTA MEA ================= */
+
+/* =====================================================
+   LISTA MEA
+===================================================== */
 
 .empty{
     background:#10131b;
@@ -678,10 +738,14 @@ body{
 
 .delete-btn:hover{
     background:#e50914;
+
     color:white;
 }
 
-/* ================= FOOTER ================= */
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
     padding:40px;
@@ -703,7 +767,10 @@ footer{
     margin-bottom:10px;
 }
 
-/* ================= MODAL ================= */
+
+/* =====================================================
+   MODAL FILM
+===================================================== */
 
 .modal{
     position:fixed;
@@ -780,11 +847,13 @@ footer{
 
 .modal-content{
     position:relative;
+
     z-index:2;
 }
 
 .modal-content h2{
     font-size:38px;
+
     margin-bottom:10px;
 }
 
@@ -820,12 +889,16 @@ footer{
 
 .modal-actions{
     display:flex;
+
     gap:10px;
 
     padding:22px;
 }
 
-/* ================= SEARCH ================= */
+
+/* =====================================================
+   SEARCH
+===================================================== */
 
 .search-overlay{
     position:fixed;
@@ -837,11 +910,13 @@ footer{
     display:none;
 
     align-items:flex-start;
+
     justify-content:center;
 
     padding-top:90px;
 
-    background:rgba(0,0,0,.92);
+    background:
+        rgba(0,0,0,.92);
 
     backdrop-filter:blur(12px);
 }
@@ -867,7 +942,9 @@ footer{
 
 .search-top{
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 
     margin-bottom:25px;
@@ -904,6 +981,7 @@ footer{
 
 .big-search{
     display:flex;
+
     align-items:center;
 
     background:#181c27;
@@ -943,7 +1021,7 @@ footer{
 }
 
 .big-search button{
-    width:65px;
+    width:110px;
 
     height:58px;
 
@@ -953,17 +1031,11 @@ footer{
 
     color:white;
 
-    font-size:22px;
+    font-size:14px;
+
+    font-weight:bold;
 
     cursor:pointer;
-}
-
-.search-help{
-    color:#7b8393;
-
-    font-size:13px;
-
-    margin-bottom:20px;
 }
 
 .search-results-title{
@@ -987,8 +1059,6 @@ footer{
     max-height:430px;
 
     overflow-y:auto;
-
-    padding-right:5px;
 }
 
 .search-result-card{
@@ -1045,7 +1115,10 @@ footer{
     padding:35px;
 }
 
-/* ================= VEZI TOT ================= */
+
+/* =====================================================
+   VEZI TOT
+===================================================== */
 
 .all-movies-page{
     position:fixed;
@@ -1110,12 +1183,346 @@ footer{
     gap:18px;
 }
 
-/* ================= TOAST ================= */
+
+/* =====================================================
+   SERIES
+===================================================== */
+
+.series-page{
+    position:fixed;
+
+    inset:0;
+
+    z-index:8000;
+
+    display:none;
+
+    overflow-y:auto;
+
+    background:#07080d;
+
+    padding:40px 5%;
+}
+
+.series-page.show{
+    display:block;
+}
+
+.series-top{
+    margin-bottom:30px;
+}
+
+.series-back{
+    border:0;
+
+    background:#20242f;
+
+    color:white;
+
+    padding:11px 20px;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+}
+
+.series-back:hover{
+    background:#e50914;
+}
+
+.series-top h1{
+    font-size:48px;
+
+    margin-bottom:8px;
+}
+
+.series-top p{
+    color:#858d9d;
+}
+
+
+/* =====================================================
+   ELITE SEZOANE
+===================================================== */
+
+.season-buttons{
+    display:flex;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+
+    margin-bottom:25px;
+}
+
+.season-button{
+    border:1px solid #303646;
+
+    background:#151923;
+
+    color:white;
+
+    padding:12px 18px;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.season-button:hover,
+.season-button.active{
+    background:#e50914;
+
+    border-color:#e50914;
+}
+
+
+/* =====================================================
+   EPISOADE
+===================================================== */
+
+.episodes-title{
+    font-size:25px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+}
+
+.episodes{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+}
+
+.episode{
+    background:#11151f;
+
+    border:1px solid #252b39;
+
+    border-radius:8px;
+
+    padding:20px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.episode:hover{
+    transform:translateY(-4px);
+
+    border-color:#ff1744;
+}
+
+.episode.active{
+    background:#e50914;
+
+    border-color:#ff1744;
+
+    box-shadow:
+        0 0 20px rgba(229,9,20,.35);
+}
+
+.episode.active .episode-number,
+.episode.active .episode-description{
+    color:white;
+}
+
+.episode-number{
+    color:#ff1744;
+
+    font-size:13px;
+
+    margin-bottom:8px;
+}
+
+.episode-name{
+    font-size:17px;
+
+    font-weight:bold;
+}
+
+.episode-description{
+    color:#777f90;
+
+    font-size:12px;
+
+    margin-top:7px;
+}
+
+
+/* =====================================================
+   LUCIFER SEZOANE
+===================================================== */
+
+.lucifer-season-buttons{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:30px;
+}
+
+.lucifer-season-card{
+    background:#11151f;
+
+    border:1px solid #252b39;
+
+    border-radius:10px;
+
+    padding:22px;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.lucifer-season-card:hover{
+    transform:translateY(-4px);
+
+    border-color:#ff1744;
+
+    background:#181d29;
+}
+
+.lucifer-season-card.active{
+    background:#e50914;
+
+    border-color:#ff1744;
+}
+
+.lucifer-season-number{
+    color:#ff1744;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+}
+
+.lucifer-season-card.active
+.lucifer-season-number{
+    color:white;
+}
+
+.lucifer-season-name{
+    font-size:19px;
+
+    font-weight:bold;
+
+    margin-bottom:6px;
+}
+
+.lucifer-season-episodes{
+    color:#7f8798;
+
+    font-size:13px;
+}
+
+.lucifer-season-card.active
+.lucifer-season-episodes{
+    color:white;
+}
+
+
+/* =====================================================
+   LUCIFER EPISOADE
+===================================================== */
+
+.lucifer-episodes-title{
+    font-size:25px;
+
+    font-weight:bold;
+
+    margin-bottom:15px;
+}
+
+.lucifer-episodes{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:14px;
+}
+
+
+/* =====================================================
+   PLAYER
+===================================================== */
+
+.player{
+    position:fixed;
+
+    inset:0;
+
+    z-index:9000;
+
+    display:none;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#000;
+}
+
+.player.show{
+    display:flex;
+}
+
+.player video{
+    width:100%;
+    height:100%;
+
+    object-fit:contain;
+}
+
+.player-close{
+    position:absolute;
+
+    right:20px;
+    top:20px;
+
+    width:45px;
+    height:45px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#222;
+
+    color:white;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    z-index:2;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
 
 .toast{
     position:fixed;
 
     left:50%;
+
     bottom:30px;
 
     transform:
@@ -1139,9 +1546,6 @@ footer{
     pointer-events:none;
 
     transition:.3s;
-
-    box-shadow:
-        0 10px 35px rgba(0,0,0,.5);
 }
 
 .toast.show{
@@ -1152,7 +1556,10 @@ footer{
         translateY(0);
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media(max-width:1200px){
 
@@ -1175,23 +1582,32 @@ footer{
         grid-template-columns:
             repeat(4,1fr);
     }
+
+    .lucifer-season-buttons{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
 }
 
 @media(max-width:850px){
 
     .sidebar{
         width:75px;
+
         padding:25px 10px;
     }
 
     .logo{
         font-size:0;
+
         margin-bottom:35px;
     }
 
     .logo::after{
         content:"C";
+
         font-size:28px;
+
         color:#ff1744;
     }
 
@@ -1201,6 +1617,7 @@ footer{
 
     .menu a{
         justify-content:center;
+
         padding:14px 5px;
     }
 
@@ -1215,6 +1632,7 @@ footer{
 
     .profile-small{
         justify-content:center;
+
         padding:8px;
     }
 
@@ -1228,6 +1646,7 @@ footer{
 
     .hero{
         min-height:500px;
+
         padding:60px 25px;
     }
 
@@ -1257,6 +1676,21 @@ footer{
     .all-movies-grid{
         grid-template-columns:
             repeat(3,1fr);
+    }
+
+    .episodes{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .lucifer-season-buttons{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .lucifer-episodes{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 }
 
@@ -1302,6 +1736,7 @@ footer{
 
     .all-movies-header{
         flex-direction:column;
+
         align-items:flex-start;
     }
 
@@ -1309,14 +1744,33 @@ footer{
         grid-template-columns:
             repeat(2,1fr);
     }
+
+    .lucifer-season-buttons{
+        grid-template-columns:1fr;
+    }
+
+    .lucifer-episodes{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:450px){
+
+    .episodes{
+        grid-template-columns:1fr;
+    }
 }
 
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= SIDEBAR ================= -->
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
 
 <aside class="sidebar">
 
@@ -1330,25 +1784,35 @@ footer{
 
     <nav class="menu">
 
-        <a href="#acasa" class="active">
+        <a
+            href="#acasa"
+            class="active"
+        >
             <span class="icon">⌂</span>
             <span>Acasă</span>
         </a>
 
-        <a href="#" id="openSearch">
+
+        <a
+            href="#"
+            id="openSearch"
+        >
             <span class="icon">⌕</span>
             <span>Căutare</span>
         </a>
+
 
         <a href="#program">
             <span class="icon">▣</span>
             <span>Program</span>
         </a>
 
+
         <a href="#popular">
             <span class="icon">★</span>
             <span>Popular</span>
         </a>
+
 
         <a href="#lista">
             <span class="icon">♡</span>
@@ -1356,6 +1820,7 @@ footer{
         </a>
 
     </nav>
+
 
     <div class="sidebar-bottom">
 
@@ -1384,9 +1849,12 @@ footer{
 </aside>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <div class="main">
+
 
     <header class="topbar">
 
@@ -1397,9 +1865,12 @@ footer{
     </header>
 
 
-    <!-- ================= HERO ================= -->
+    <!-- HERO -->
 
-    <section class="hero" id="acasa">
+    <section
+        class="hero"
+        id="acasa"
+    >
 
         <div class="hero-content">
 
@@ -1413,10 +1884,12 @@ footer{
             </h1>
 
             <div class="hero-info">
+
                 <span>2026</span>
                 <span>16+</span>
                 <span>4K</span>
                 <span>9.4</span>
+
             </div>
 
             <p class="hero-description">
@@ -1450,14 +1923,17 @@ footer{
     </section>
 
 
-    <!-- ================= CONTENT ================= -->
+    <!-- CONTENT -->
 
     <main class="content">
 
 
-        <!-- ================= POPULAR ================= -->
+        <!-- POPULAR -->
 
-        <section class="section" id="popular">
+        <section
+            class="section"
+            id="popular"
+        >
 
             <div class="section-title">
 
@@ -1482,7 +1958,7 @@ footer{
                 <div
                     class="card"
                     data-title="ELITE"
-                    data-meta="Dramă • 9.1"
+                    data-meta="Serial • 8 sezoane"
                     data-poster="p1"
                     onclick="openMovie('ELITE')"
                 >
@@ -1496,7 +1972,7 @@ footer{
                         </div>
 
                         <div class="card-meta">
-                            Dramă • 9.1
+                            Serial • 8 sezoane
                         </div>
 
                     </div>
@@ -1532,7 +2008,7 @@ footer{
                 <div
                     class="card"
                     data-title="LUCIFER"
-                    data-meta="Fantasy • 8.8"
+                    data-meta="Serial • 6 sezoane"
                     data-poster="p3"
                     onclick="openMovie('LUCIFER')"
                 >
@@ -1546,7 +2022,7 @@ footer{
                         </div>
 
                         <div class="card-meta">
-                            Fantasy • 8.8
+                            Serial • 6 sezoane
                         </div>
 
                     </div>
@@ -1633,7 +2109,7 @@ footer{
         </section>
 
 
-        <!-- ================= NOI ================= -->
+        <!-- NOI -->
 
         <section class="section">
 
@@ -1761,9 +2237,12 @@ footer{
         </section>
 
 
-        <!-- ================= PROGRAM ================= -->
+        <!-- PROGRAM -->
 
-        <section class="section" id="program">
+        <section
+            class="section"
+            id="program"
+        >
 
             <div class="section-title">
 
@@ -1778,87 +2257,33 @@ footer{
             <div class="program">
 
                 <div class="program-card">
-
-                    <div class="program-time">
-                        19:00
-                    </div>
-
-                    <div class="program-name">
-                        ELITE
-                    </div>
-
-                    <div class="program-type">
-                        Film • Dramă
-                    </div>
-
+                    <div class="program-time">19:00</div>
+                    <div class="program-name">ELITE</div>
+                    <div class="program-type">Serial</div>
                 </div>
 
-
                 <div class="program-card">
-
-                    <div class="program-time">
-                        20:00
-                    </div>
-
-                    <div class="program-name">
-                        WOODWALKERS
-                    </div>
-
-                    <div class="program-type">
-                        Film • Aventură
-                    </div>
-
+                    <div class="program-time">20:00</div>
+                    <div class="program-name">WOODWALKERS</div>
+                    <div class="program-type">Film • Aventură</div>
                 </div>
 
-
                 <div class="program-card">
-
-                    <div class="program-time">
-                        21:00
-                    </div>
-
-                    <div class="program-name">
-                        LUCIFER
-                    </div>
-
-                    <div class="program-type">
-                        Serial
-                    </div>
-
+                    <div class="program-time">21:00</div>
+                    <div class="program-name">LUCIFER</div>
+                    <div class="program-type">Serial</div>
                 </div>
 
-
                 <div class="program-card">
-
-                    <div class="program-time">
-                        22:00
-                    </div>
-
-                    <div class="program-name">
-                        LEVITICUS
-                    </div>
-
-                    <div class="program-type">
-                        Thriller
-                    </div>
-
+                    <div class="program-time">22:00</div>
+                    <div class="program-name">LEVITICUS</div>
+                    <div class="program-type">Thriller</div>
                 </div>
 
-
                 <div class="program-card">
-
-                    <div class="program-time">
-                        23:00
-                    </div>
-
-                    <div class="program-name">
-                        AVATAR
-                    </div>
-
-                    <div class="program-type">
-                        SF • Aventură
-                    </div>
-
+                    <div class="program-time">23:00</div>
+                    <div class="program-name">AVATAR</div>
+                    <div class="program-type">SF • Aventură</div>
                 </div>
 
             </div>
@@ -1866,9 +2291,12 @@ footer{
         </section>
 
 
-        <!-- ================= LISTA MEA ================= -->
+        <!-- LISTA MEA -->
 
-        <section class="section" id="lista">
+        <section
+            class="section"
+            id="lista"
+        >
 
             <div class="section-title">
 
@@ -1892,15 +2320,13 @@ footer{
             <div
                 class="movies"
                 id="myList"
-                style="margin-top:15px;"
+                style="margin-top:15px"
             ></div>
 
         </section>
 
     </main>
 
-
-    <!-- ================= FOOTER ================= -->
 
     <footer>
 
@@ -1917,7 +2343,9 @@ footer{
 </div>
 
 
-<!-- ================= MODAL ================= -->
+<!-- =====================================================
+     MODAL
+===================================================== -->
 
 <div
     class="modal"
@@ -1932,6 +2360,7 @@ footer{
         >
             ×
         </button>
+
 
         <div class="modal-banner">
 
@@ -1948,6 +2377,7 @@ footer{
             </div>
 
         </div>
+
 
         <div class="modal-actions">
 
@@ -1972,7 +2402,9 @@ footer{
 </div>
 
 
-<!-- ================= SEARCH ================= -->
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
 <div
     class="search-overlay"
@@ -2016,16 +2448,6 @@ footer{
         </div>
 
 
-        <div class="search-help">
-
-            Scrie numele unui film, de exemplu:
-            <b>AVATAR</b>,
-            <b>ELITE</b> sau
-            <b>LUCIFER</b>.
-
-        </div>
-
-
         <div class="search-results-title">
 
             Rezultate
@@ -2044,7 +2466,9 @@ footer{
 </div>
 
 
-<!-- ================= VEZI TOT ================= -->
+<!-- =====================================================
+     VEZI TOT
+===================================================== -->
 
 <div
     class="all-movies-page"
@@ -2075,7 +2499,136 @@ footer{
 </div>
 
 
-<!-- ================= TOAST ================= -->
+<!-- =====================================================
+     ELITE
+===================================================== -->
+
+<div
+    class="series-page"
+    id="eliteSeries"
+>
+
+    <div class="series-top">
+
+        <button
+            class="series-back"
+            onclick="closeEliteSeries()"
+        >
+            Înapoi
+        </button>
+
+        <h1>ELITE</h1>
+
+        <p>
+            Serial • 8 Sezoane • 64 Episoade
+        </p>
+
+    </div>
+
+
+    <div
+        class="season-buttons"
+        id="seasonButtons"
+    ></div>
+
+
+    <div
+        class="episodes-title"
+        id="episodesTitle"
+    >
+        Sezonul 1
+    </div>
+
+
+    <div
+        class="episodes"
+        id="episodes"
+    ></div>
+
+</div>
+
+
+<!-- =====================================================
+     LUCIFER
+===================================================== -->
+
+<div
+    class="series-page"
+    id="luciferSeries"
+>
+
+    <div class="series-top">
+
+        <button
+            class="series-back"
+            onclick="closeLuciferSeries()"
+        >
+            Înapoi
+        </button>
+
+        <h1>LUCIFER</h1>
+
+        <p>
+            Serial • 6 Sezoane
+        </p>
+
+    </div>
+
+
+    <div
+        class="lucifer-season-buttons"
+        id="luciferSeasons"
+    ></div>
+
+
+    <div
+        class="lucifer-episodes-title"
+        id="luciferEpisodesTitle"
+    >
+        Sezonul 1
+    </div>
+
+
+    <div
+        class="lucifer-episodes"
+        id="luciferEpisodes"
+    ></div>
+
+</div>
+
+
+<!-- =====================================================
+     PLAYER
+===================================================== -->
+
+<div
+    class="player"
+    id="player"
+>
+
+    <button
+        class="player-close"
+        onclick="closePlayer()"
+    >
+        ×
+    </button>
+
+
+    <video
+        id="videoPlayer"
+        controls
+    >
+
+        <source
+            id="videoSource"
+            src=""
+            type="video/mp4"
+        >
+
+    </video>
+
+</div>
+
 
 <div
     class="toast"
@@ -2086,12 +2639,42 @@ footer{
 <script>
 
 /* =====================================================
-   VARIABILE
+   VARIABLES
 ===================================================== */
 
 let currentMovie = "";
 
-let toastTimer;
+let toastTimer = null;
+
+
+/* =====================================================
+   MARCAJE EPISOADE
+===================================================== */
+
+const eliteWatched = {};
+
+const luciferWatched = {};
+
+
+/* =====================================================
+   EPISOADE LUCIFER
+===================================================== */
+
+const luciferEpisodes = {
+
+    1:13,
+
+    2:18,
+
+    3:26,
+
+    4:10,
+
+    5:16,
+
+    6:10
+
+};
 
 
 /* =====================================================
@@ -2113,20 +2696,10 @@ const bigSearchInput =
         "bigSearchInput"
     );
 
-const bigSearchButton =
-    document.getElementById(
-        "bigSearchButton"
-    );
-
 const searchResults =
     document.getElementById(
         "searchResults"
     );
-
-
-/* =====================================================
-   FILME
-===================================================== */
 
 const allCards =
     Array.from(
@@ -2137,242 +2710,38 @@ const allCards =
 
 
 /* =====================================================
-   DESCHIDE CĂUTAREA
-===================================================== */
-
-document
-    .getElementById("openSearch")
-    .addEventListener(
-        "click",
-        function(event){
-
-            event.preventDefault();
-
-            searchOverlay.classList.add(
-                "show"
-            );
-
-            bigSearchInput.focus();
-
-            showSearchResults("");
-
-        }
-    );
-
-
-/* =====================================================
-   ÎNCHIDE CĂUTAREA
-===================================================== */
-
-document
-    .getElementById("closeSearch")
-    .addEventListener(
-        "click",
-        closeSearch
-    );
-
-
-function closeSearch(){
-
-    searchOverlay.classList.remove(
-        "show"
-    );
-
-    bigSearchInput.value = "";
-
-    searchResults.innerHTML = "";
-
-}
-
-
-/* =====================================================
-   CĂUTARE
-===================================================== */
-
-function showSearchResults(text){
-
-    searchResults.innerHTML = "";
-
-
-    const matches =
-        allCards.filter(
-            function(card){
-
-                const title =
-                    (
-                        card.dataset.title ||
-                        ""
-                    )
-                    .toLowerCase();
-
-                return (
-                    text === "" ||
-                    title.includes(text)
-                );
-
-            }
-        );
-
-
-    if(
-        matches.length === 0
-    ){
-
-        searchResults.innerHTML = `
-
-            <div class="no-results">
-                Nu am găsit niciun rezultat.
-            </div>
-
-        `;
-
-        return;
-    }
-
-
-    matches.forEach(
-        function(card){
-
-            const title =
-                card.dataset.title ||
-                "Film";
-
-            const meta =
-                card.dataset.meta ||
-                "CINEPLEX";
-
-            const poster =
-                card.dataset.poster ||
-                "p1";
-
-
-            const result =
-                document.createElement(
-                    "div"
-                );
-
-
-            result.className =
-                "search-result-card";
-
-
-            result.innerHTML = `
-
-                <div class="
-                    search-result-poster
-                    ${poster}
-                "></div>
-
-                <div class="
-                    search-result-info
-                ">
-
-                    <div class="
-                        search-result-title
-                    ">
-                        ${escapeHTML(title)}
-                    </div>
-
-                    <div class="
-                        search-result-meta
-                    ">
-                        ${escapeHTML(meta)}
-                    </div>
-
-                </div>
-
-            `;
-
-
-            result.addEventListener(
-                "click",
-                function(){
-
-                    closeSearch();
-
-                    openMovie(title);
-
-                }
-            );
-
-
-            searchResults.appendChild(
-                result
-            );
-
-        }
-    );
-
-}
-
-
-/* ================= SEARCH LIVE ================= */
-
-bigSearchInput.addEventListener(
-    "input",
-    function(){
-
-        showSearchResults(
-            this.value
-            .toLowerCase()
-            .trim()
-        );
-
-    }
-);
-
-
-/* ================= ENTER ================= */
-
-bigSearchInput.addEventListener(
-    "keydown",
-    function(event){
-
-        if(
-            event.key === "Enter"
-        ){
-
-            event.preventDefault();
-
-            showSearchResults(
-                this.value
-                .toLowerCase()
-                .trim()
-            );
-
-        }
-
-    }
-);
-
-
-/* ================= SEARCH BUTTON ================= */
-
-bigSearchButton.addEventListener(
-    "click",
-    function(){
-
-        showSearchResults(
-            bigSearchInput.value
-            .toLowerCase()
-            .trim()
-        );
-
-    }
-);
-
-
-/* =====================================================
-   OPEN MOVIE
+   DESCHIDE FILM / SERIAL
 ===================================================== */
 
 function openMovie(title){
 
     currentMovie = title;
 
+
+    if(title === "ELITE"){
+
+        openEliteSeries();
+
+        return;
+
+    }
+
+
+    if(title === "LUCIFER"){
+
+        openLuciferSeries();
+
+        return;
+
+    }
+
+
     document
-        .getElementById("modalTitle")
+        .getElementById(
+            "modalTitle"
+        )
         .textContent = title;
+
 
     movieModal.classList.add(
         "show"
@@ -2382,7 +2751,7 @@ function openMovie(title){
 
 
 /* =====================================================
-   CLOSE MOVIE
+   ÎNCHIDE MODAL
 ===================================================== */
 
 function closeMovie(){
@@ -2395,7 +2764,592 @@ function closeMovie(){
 
 
 /* =====================================================
-   PLAY
+   ELITE
+===================================================== */
+
+function openEliteSeries(){
+
+    document
+        .getElementById(
+            "eliteSeries"
+        )
+        .classList.add(
+            "show"
+        );
+
+
+    createEliteSeasons();
+
+    showEliteSeason(1);
+
+}
+
+
+function closeEliteSeries(){
+
+    document
+        .getElementById(
+            "eliteSeries"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* 8 sezoane */
+
+function createEliteSeasons(){
+
+    const container =
+        document.getElementById(
+            "seasonButtons"
+        );
+
+
+    container.innerHTML = "";
+
+
+    for(
+        let season = 1;
+        season <= 8;
+        season++
+    ){
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "season-button";
+
+
+        button.textContent =
+            "Sezonul " +
+            season;
+
+
+        button.onclick =
+            function(){
+
+                showEliteSeason(
+                    season
+                );
+
+            };
+
+
+        container.appendChild(
+            button
+        );
+
+    }
+
+}
+
+
+/* 8 episoade */
+
+function showEliteSeason(season){
+
+    const buttons =
+        document.querySelectorAll(
+            "#seasonButtons .season-button"
+        );
+
+
+    buttons.forEach(
+        function(button){
+
+            button.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    if(buttons[season - 1]){
+
+        buttons[
+            season - 1
+        ].classList.add(
+            "active"
+        );
+
+    }
+
+
+    document
+        .getElementById(
+            "episodesTitle"
+        )
+        .textContent =
+        "Sezonul " +
+        season;
+
+
+    const episodes =
+        document.getElementById(
+            "episodes"
+        );
+
+
+    episodes.innerHTML = "";
+
+
+    for(
+        let episode = 1;
+        episode <= 8;
+        episode++
+    ){
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "episode";
+
+
+        const key =
+            season +
+            "-" +
+            episode;
+
+
+        if(
+            eliteWatched[key]
+        ){
+
+            card.classList.add(
+                "active"
+            );
+
+        }
+
+
+        card.innerHTML = `
+
+            <div class="episode-number">
+                EPISODUL ${episode}
+            </div>
+
+            <div class="episode-name">
+                ELITE -
+                Sezonul ${season} -
+                Episodul ${episode}
+            </div>
+
+            <div class="episode-description">
+                Episodul ${episode}
+                din sezonul ${season}.
+            </div>
+
+        `;
+
+
+        card.onclick =
+            function(){
+
+                toggleEliteEpisode(
+                    season,
+                    episode,
+                    card
+                );
+
+            };
+
+
+        episodes.appendChild(
+            card
+        );
+
+    }
+
+}
+
+
+/* roșu / normal */
+
+function toggleEliteEpisode(
+    season,
+    episode,
+    card
+){
+
+    const key =
+        season +
+        "-" +
+        episode;
+
+
+    if(
+        eliteWatched[key]
+    ){
+
+        eliteWatched[key] =
+            false;
+
+
+        card.classList.remove(
+            "active"
+        );
+
+
+        showToast(
+            "ELITE - Sezonul " +
+            season +
+            " - Episodul " +
+            episode +
+            " demarcat"
+        );
+
+    }else{
+
+        eliteWatched[key] =
+            true;
+
+
+        card.classList.add(
+            "active"
+        );
+
+
+        showToast(
+            "ELITE - Sezonul " +
+            season +
+            " - Episodul " +
+            episode +
+            " marcat"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   LUCIFER
+===================================================== */
+
+function openLuciferSeries(){
+
+    const page =
+        document.getElementById(
+            "luciferSeries"
+        );
+
+
+    const container =
+        document.getElementById(
+            "luciferSeasons"
+        );
+
+
+    container.innerHTML = "";
+
+
+    for(
+        let season = 1;
+        season <= 6;
+        season++
+    ){
+
+        const button =
+            document.createElement(
+                "button"
+            );
+
+
+        button.className =
+            "lucifer-season-card";
+
+
+        button.innerHTML = `
+
+            <div class="
+                lucifer-season-number
+            ">
+                SEZONUL ${season}
+            </div>
+
+            <div class="
+                lucifer-season-name
+            ">
+                LUCIFER
+            </div>
+
+            <div class="
+                lucifer-season-episodes
+            ">
+                ${luciferEpisodes[season]}
+                episoade
+            </div>
+
+        `;
+
+
+        button.onclick =
+            function(){
+
+                showLuciferSeason(
+                    season
+                );
+
+            };
+
+
+        container.appendChild(
+            button
+        );
+
+    }
+
+
+    page.classList.add(
+        "show"
+    );
+
+
+    showLuciferSeason(1);
+
+}
+
+
+function closeLuciferSeries(){
+
+    document
+        .getElementById(
+            "luciferSeries"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* arată episoadele */
+
+function showLuciferSeason(season){
+
+    const buttons =
+        document.querySelectorAll(
+            "#luciferSeasons .lucifer-season-card"
+        );
+
+
+    buttons.forEach(
+        function(button){
+
+            button.classList.remove(
+                "active"
+            );
+
+        }
+    );
+
+
+    if(buttons[season - 1]){
+
+        buttons[
+            season - 1
+        ].classList.add(
+            "active"
+        );
+
+    }
+
+
+    const count =
+        luciferEpisodes[season];
+
+
+    document
+        .getElementById(
+            "luciferEpisodesTitle"
+        )
+        .textContent =
+        "Sezonul " +
+        season +
+        " - " +
+        count +
+        " episoade";
+
+
+    const episodes =
+        document.getElementById(
+            "luciferEpisodes"
+        );
+
+
+    episodes.innerHTML = "";
+
+
+    for(
+        let episode = 1;
+        episode <= count;
+        episode++
+    ){
+
+        const card =
+            document.createElement(
+                "div"
+            );
+
+
+        card.className =
+            "episode";
+
+
+        const key =
+            season +
+            "-" +
+            episode;
+
+
+        /*
+           Dacă episodul a fost marcat,
+           îl afișăm roșu.
+        */
+
+        if(
+            luciferWatched[key]
+        ){
+
+            card.classList.add(
+                "active"
+            );
+
+        }
+
+
+        card.innerHTML = `
+
+            <div class="episode-number">
+                EPISODUL ${episode}
+            </div>
+
+            <div class="episode-name">
+                LUCIFER -
+                Sezonul ${season} -
+                Episodul ${episode}
+            </div>
+
+            <div class="episode-description">
+                Episodul ${episode}
+                din sezonul ${season}.
+            </div>
+
+        `;
+
+
+        /*
+           Exact ca la ELITE:
+           click = roșu / normal
+        */
+
+        card.onclick =
+            function(){
+
+                toggleLuciferEpisode(
+                    season,
+                    episode,
+                    card
+                );
+
+            };
+
+
+        episodes.appendChild(
+            card
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   LUCIFER - ROȘU / NORMAL
+===================================================== */
+
+function toggleLuciferEpisode(
+    season,
+    episode,
+    card
+){
+
+    const key =
+        season +
+        "-" +
+        episode;
+
+
+    /*
+       Era roșu -> îl facem normal.
+    */
+
+    if(
+        luciferWatched[key]
+    ){
+
+        luciferWatched[key] =
+            false;
+
+
+        card.classList.remove(
+            "active"
+        );
+
+
+        showToast(
+            "LUCIFER - Sezonul " +
+            season +
+            " - Episodul " +
+            episode +
+            " demarcat"
+        );
+
+    }
+
+
+    /*
+       Era normal -> îl facem roșu.
+    */
+
+    else{
+
+        luciferWatched[key] =
+            true;
+
+
+        card.classList.add(
+            "active"
+        );
+
+
+        showToast(
+            "LUCIFER - Sezonul " +
+            season +
+            " - Episodul " +
+            episode +
+            " marcat"
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   REDARE
 ===================================================== */
 
 function playMovie(){
@@ -2409,7 +3363,7 @@ function playMovie(){
 
 
 /* =====================================================
-   ADD TO LIST
+   LISTA MEA
 ===================================================== */
 
 function addToList(){
@@ -2418,6 +3372,7 @@ function addToList(){
         document.getElementById(
             "myList"
         );
+
 
     const empty =
         document.getElementById(
@@ -2453,9 +3408,12 @@ function addToList(){
             "Filmul este deja în Lista mea."
         );
 
+
         closeMovie();
 
+
         return;
+
     }
 
 
@@ -2469,7 +3427,9 @@ function addToList(){
         );
 
 
-    card.className = "card";
+    card.className =
+        "card";
+
 
     card.dataset.title =
         currentMovie;
@@ -2512,7 +3472,9 @@ function addToList(){
             ){
 
                 return;
+
             }
+
 
             openMovie(
                 currentMovie
@@ -2522,25 +3484,31 @@ function addToList(){
     );
 
 
-    const deleteButton =
-        card.querySelector(
+    card
+        .querySelector(
             ".delete-btn"
+        )
+        .addEventListener(
+            "click",
+            function(event){
+
+                event.stopPropagation();
+
+
+                deleteFromList(
+                    card
+                );
+
+            }
         );
 
 
-    deleteButton.addEventListener(
-        "click",
-        function(event){
-
-            event.stopPropagation();
-
-            deleteFromList(card);
-
-        }
+    list.appendChild(
+        card
     );
 
 
-    list.appendChild(card);
+    closeMovie();
 
 
     showToast(
@@ -2548,15 +3516,8 @@ function addToList(){
         " a fost adăugat în Lista mea."
     );
 
-
-    closeMovie();
-
 }
 
-
-/* =====================================================
-   DELETE
-===================================================== */
 
 function deleteFromList(card){
 
@@ -2572,6 +3533,7 @@ function deleteFromList(card){
         document.getElementById(
             "myList"
         );
+
 
     const empty =
         document.getElementById(
@@ -2598,6 +3560,251 @@ function deleteFromList(card){
 
 
 /* =====================================================
+   SEARCH
+===================================================== */
+
+document
+    .getElementById(
+        "openSearch"
+    )
+    .addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+
+            searchOverlay.classList.add(
+                "show"
+            );
+
+
+            bigSearchInput.focus();
+
+
+            showSearchResults("");
+
+        }
+    );
+
+
+document
+    .getElementById(
+        "closeSearch"
+    )
+    .addEventListener(
+        "click",
+        closeSearch
+    );
+
+
+function closeSearch(){
+
+    searchOverlay.classList.remove(
+        "show"
+    );
+
+
+    bigSearchInput.value =
+        "";
+
+
+    searchResults.innerHTML =
+        "";
+
+}
+
+
+function showSearchResults(text){
+
+    searchResults.innerHTML =
+        "";
+
+
+    const matches =
+        allCards.filter(
+            function(card){
+
+                const title =
+                    (
+                        card.dataset.title ||
+                        ""
+                    )
+                    .toLowerCase();
+
+
+                return(
+                    text === "" ||
+                    title.includes(
+                        text
+                    )
+                );
+
+            }
+        );
+
+
+    if(
+        matches.length === 0
+    ){
+
+        searchResults.innerHTML = `
+
+            <div class="no-results">
+                Nu am găsit niciun rezultat.
+            </div>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    matches.forEach(
+        function(card){
+
+            const title =
+                card.dataset.title ||
+                "Film";
+
+
+            const meta =
+                card.dataset.meta ||
+                "CINEPLEX";
+
+
+            const poster =
+                card.dataset.poster ||
+                "p1";
+
+
+            const result =
+                document.createElement(
+                    "div"
+                );
+
+
+            result.className =
+                "search-result-card";
+
+
+            result.innerHTML = `
+
+                <div
+                    class="
+                        search-result-poster
+                        ${poster}
+                    "
+                ></div>
+
+                <div
+                    class="
+                        search-result-info
+                    "
+                >
+
+                    <div
+                        class="
+                            search-result-title
+                        "
+                    >
+                        ${escapeHTML(title)}
+                    </div>
+
+                    <div
+                        class="
+                            search-result-meta
+                        "
+                    >
+                        ${escapeHTML(meta)}
+                    </div>
+
+                </div>
+
+            `;
+
+
+            result.onclick =
+                function(){
+
+                    closeSearch();
+
+
+                    openMovie(
+                        title
+                    );
+
+                };
+
+
+            searchResults.appendChild(
+                result
+            );
+
+        }
+    );
+
+}
+
+
+bigSearchInput.addEventListener(
+    "input",
+    function(){
+
+        showSearchResults(
+            this.value
+                .toLowerCase()
+                .trim()
+        );
+
+    }
+);
+
+
+bigSearchInput.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter"
+        ){
+
+            event.preventDefault();
+
+
+            showSearchResults(
+                this.value
+                    .toLowerCase()
+                    .trim()
+            );
+
+        }
+
+    }
+);
+
+
+document
+    .getElementById(
+        "bigSearchButton"
+    )
+    .addEventListener(
+        "click",
+        function(){
+
+            showSearchResults(
+                bigSearchInput.value
+                    .toLowerCase()
+                    .trim()
+            );
+
+        }
+    );
+
+
+/* =====================================================
    VEZI TOT
 ===================================================== */
 
@@ -2608,10 +3815,12 @@ function openAllMovies(type){
             "allMoviesPage"
         );
 
+
     const title =
         document.getElementById(
             "allMoviesTitle"
         );
+
 
     const grid =
         document.getElementById(
@@ -2619,60 +3828,33 @@ function openAllMovies(type){
         );
 
 
-    grid.innerHTML = "";
+    grid.innerHTML =
+        "";
 
 
-    if(
+    title.textContent =
         type === "popular"
-    ){
-
-        title.textContent =
-            "Populare on CINEPLEX";
-
-    }else{
-
-        title.textContent =
-            "Noi pe CINEPLEX";
-
-    }
+        ?
+        "Populare on CINEPLEX"
+        :
+        "Noi pe CINEPLEX";
 
 
-    let selectedCards;
-
-
-    if(
+    const selected =
         type === "popular"
-    ){
-
-        selectedCards =
-            allCards.slice(0,6);
-
-    }else{
-
-        selectedCards =
-            allCards.slice(6);
-
-    }
+        ?
+        allCards.slice(0,6)
+        :
+        allCards.slice(6);
 
 
-    selectedCards.forEach(
+    selected.forEach(
         function(card){
 
             const clone =
-                card.cloneNode(true);
-
-
-            const deleteButton =
-                clone.querySelector(
-                    ".delete-btn"
+                card.cloneNode(
+                    true
                 );
-
-
-            if(deleteButton){
-
-                deleteButton.remove();
-
-            }
 
 
             const movieTitle =
@@ -2684,6 +3866,7 @@ function openAllMovies(type){
                 function(){
 
                     closeAllMovies();
+
 
                     openMovie(
                         movieTitle
@@ -2707,10 +3890,6 @@ function openAllMovies(type){
 }
 
 
-/* =====================================================
-   ÎNCHIDE VEZI TOT
-===================================================== */
-
 function closeAllMovies(){
 
     document
@@ -2725,7 +3904,35 @@ function closeAllMovies(){
 
 
 /* =====================================================
-   CLICK OUTSIDE MODAL
+   PLAYER
+===================================================== */
+
+function closePlayer(){
+
+    const player =
+        document.getElementById(
+            "player"
+        );
+
+
+    const video =
+        document.getElementById(
+            "videoPlayer"
+        );
+
+
+    video.pause();
+
+
+    player.classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE
 ===================================================== */
 
 movieModal.addEventListener(
@@ -2733,7 +3940,8 @@ movieModal.addEventListener(
     function(event){
 
         if(
-            event.target === movieModal
+            event.target ===
+            movieModal
         ){
 
             closeMovie();
@@ -2744,16 +3952,13 @@ movieModal.addEventListener(
 );
 
 
-/* =====================================================
-   CLICK OUTSIDE SEARCH
-===================================================== */
-
 searchOverlay.addEventListener(
     "click",
     function(event){
 
         if(
-            event.target === searchOverlay
+            event.target ===
+            searchOverlay
         ){
 
             closeSearch();
@@ -2781,6 +3986,12 @@ document.addEventListener(
             closeSearch();
 
             closeAllMovies();
+
+            closeEliteSeries();
+
+            closeLuciferSeries();
+
+            closePlayer();
 
         }
 
@@ -2836,11 +4047,31 @@ function showToast(message){
 function escapeHTML(text){
 
     return String(text)
-        .replace(/&/g,"&amp;")
-        .replace(/</g,"&lt;")
-        .replace(/>/g,"&gt;")
-        .replace(/"/g,"&quot;")
-        .replace(/'/g,"&#039;");
+
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+
+        .replace(
+            /</g,
+            "&lt;"
+        )
+
+        .replace(
+            />/g,
+            "&gt;"
+        )
+
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+
+        .replace(
+            /'/g,
+            "&#039;"
+        );
 
 }
 
