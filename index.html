@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ro">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,1583 +8,2779 @@
 
 <style>
 
-/* =========================
-   GENERAL
-========================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+html{
+    scroll-behavior:smooth;
 }
 
-body {
-    background: #080808;
-    color: white;
-    font-family: Arial, sans-serif;
+body{
+    background:#07080d;
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+    overflow-x:hidden;
 }
 
+/* ================= SIDEBAR ================= */
 
-/* =========================
-   NAVBAR
-========================= */
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    width:240px;
 
-.navbar {
-    position: absolute;
-    top: 0;
-    left: 0;
+    padding:30px 18px;
 
-    width: 100%;
-    z-index: 20;
+    background:linear-gradient(
+        180deg,
+        #0d101b,
+        #07080d
+    );
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    border-right:1px solid #202432;
 
-    padding: 20px 5%;
+    z-index:1000;
+}
+
+.logo{
+    text-align:center;
+
+    font-size:30px;
+    font-weight:1000;
+    letter-spacing:3px;
+
+    margin-bottom:45px;
+
+    background:linear-gradient(
+        90deg,
+        #ff1744,
+        #ff1744 45%,
+        #1683ff
+    );
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+}
+
+.menu-title{
+    color:#606678;
+
+    font-size:11px;
+    font-weight:bold;
+
+    padding:0 15px;
+    margin-bottom:10px;
+
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.menu{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.menu a{
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    padding:13px 15px;
+
+    border-radius:9px;
+
+    color:#aeb3c0;
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:bold;
+
+    transition:.2s;
+
+    cursor:pointer;
+}
+
+.menu a:hover{
+    background:#171b27;
+    color:white;
+}
+
+.menu a.active{
+    background:linear-gradient(
+        90deg,
+        rgba(255,23,68,.22),
+        rgba(23,116,255,.12)
+    );
+
+    color:white;
+
+    border-left:3px solid #ff1744;
+}
+
+.icon{
+    width:22px;
+    text-align:center;
+    font-size:18px;
+}
+
+.sidebar-bottom{
+    position:absolute;
+    left:18px;
+    right:18px;
+    bottom:25px;
+}
+
+.profile-small{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    background:#11141e;
+}
+
+.avatar{
+    width:38px;
+    height:38px;
+
+    border-radius:9px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-weight:bold;
+
+    background:linear-gradient(
+        135deg,
+        #ff1744,
+        #146dff
+    );
+}
+
+.profile-name{
+    font-size:13px;
+}
+
+.profile-status{
+    color:#737889;
+
+    font-size:11px;
+
+    margin-top:3px;
+}
+
+/* ================= MAIN ================= */
+
+.main{
+    margin-left:240px;
+    min-height:100vh;
+}
+
+/* ================= TOPBAR ================= */
+
+.topbar{
+    height:78px;
+
+    display:flex;
+    align-items:center;
+
+    padding:0 38px;
+
+    position:sticky;
+    top:0;
+
+    z-index:900;
+
+    background:rgba(7,8,13,.92);
+
+    backdrop-filter:blur(14px);
+
+    border-bottom:1px solid #171b25;
+}
+
+.page-title{
+    font-size:18px;
+    font-weight:bold;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:550px;
+
+    position:relative;
+
+    display:flex;
+    align-items:flex-end;
+
+    padding:70px 50px 65px;
+
+    overflow:hidden;
 
     background:
+        radial-gradient(
+            ellipse at 75% 25%,
+            rgba(18,98,255,.45),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 65% 65%,
+            rgba(255,0,50,.35),
+            transparent 42%
+        ),
         linear-gradient(
-            to bottom,
-            rgba(0,0,0,.95),
-            transparent
+            105deg,
+            #141726,
+            #0d1120 60%,
+            #111a31
         );
 }
 
-.logo {
-    color: white;
-    text-decoration: none;
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
 
-    font-size: 32px;
-    font-weight: 900;
+    background:linear-gradient(
+        90deg,
+        #07080d 0%,
+        rgba(7,8,13,.35) 52%,
+        rgba(7,8,13,.05) 100%
+    );
 }
 
-.logo span {
-    color: #e50914;
+.hero::after{
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+
+    height:170px;
+
+    background:linear-gradient(
+        transparent,
+        #07080d
+    );
 }
 
-.nav-links {
-    display: flex;
-    gap: 25px;
+.hero-content{
+    max-width:620px;
+
+    position:relative;
+    z-index:2;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.hero-badge{
+    display:inline-block;
+
+    padding:8px 13px;
+
+    border-radius:5px;
+
+    background:#e50914;
+
+    font-size:12px;
+    font-weight:bold;
+
+    margin-bottom:18px;
 }
 
-.nav-links a:hover {
-    color: #e50914;
+.hero h1{
+    font-size:64px;
+    line-height:.95;
+
+    margin-bottom:17px;
 }
 
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    position: relative;
-
-    width: 100%;
-    height: 720px;
-
-    overflow: hidden;
-
-    background: #000;
+.hero h1 span{
+    color:#ff1744;
 }
 
+.hero-info{
+    display:flex;
+    gap:15px;
 
-/* =========================
-   VIDEO BACKGROUND
-========================= */
+    color:#b6bbc7;
 
-.hero-video {
-    position: absolute;
+    font-size:13px;
 
-    top: 0;
-    left: 0;
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    z-index: 1;
-
-    background: #000;
+    margin-bottom:16px;
 }
 
+.hero-description{
+    color:#c8ccd5;
 
-/* =========================
-   ROSU + ALBASTRU PESTE VIDEO
-========================= */
+    font-size:16px;
 
-.hero-overlay {
-    position: absolute;
+    line-height:1.6;
 
-    inset: 0;
+    margin-bottom:25px;
 
-    z-index: 2;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(220, 0, 30, 0.80) 0%,
-            rgba(120, 10, 80, 0.55) 45%,
-            rgba(0, 80, 255, 0.75) 100%
-        );
-
-    mix-blend-mode: screen;
+    max-width:600px;
 }
 
-
-/* =========================
-   FADE JOS
-========================= */
-
-.hero-bottom {
-    position: absolute;
-
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    height: 250px;
-
-    z-index: 3;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            transparent,
-            #080808
-        );
+.buttons{
+    display:flex;
+    gap:10px;
 }
 
+.btn{
+    border:0;
 
-/* =========================
-   TEXT + BUTOANE
-========================= */
+    padding:13px 22px;
 
-.hero-content {
-    position: absolute;
+    border-radius:6px;
 
-    left: 6%;
-    bottom: 110px;
+    font-size:14px;
+    font-weight:bold;
 
-    max-width: 650px;
+    cursor:pointer;
 
-    z-index: 10;
-
-    pointer-events: auto;
+    transition:.2s;
 }
 
-.hero-small {
-    color: #e50914;
-
-    font-weight: bold;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 15px;
+.btn:hover{
+    transform:translateY(-2px);
 }
 
-.hero h1 {
-    font-size: clamp(50px, 8vw, 90px);
-
-    line-height: .9;
-
-    letter-spacing: -5px;
+.watch{
+    background:white;
+    color:black;
 }
 
-.hero h1 span {
-    color: #e50914;
+.more{
+    background:#303542;
+    color:white;
 }
 
-.hero p {
-    margin-top: 22px;
-
-    color: #ddd;
-
-    font-size: 18px;
-
-    line-height: 1.6;
+.red{
+    background:#e50914;
+    color:white;
 }
 
+/* ================= CONTENT ================= */
 
-/* =========================
-   BUTOANE
-========================= */
+.content{
+    padding:0 38px 50px;
 
-.buttons {
-    display: flex;
+    margin-top:-5px;
 
-    gap: 12px;
-
-    margin-top: 28px;
+    position:relative;
+    z-index:5;
 }
 
-.btn {
-    border: none;
-
-    border-radius: 6px;
-
-    padding: 14px 22px;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    text-decoration: none;
-
-    display: inline-block;
+.section{
+    margin-bottom:34px;
 }
 
-.btn-white {
-    background: white;
+.section-title{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-    color: #111;
+    font-size:22px;
+
+    margin-bottom:15px;
 }
 
-.btn-white:hover {
-    background: #e50914;
-
-    color: white;
+.section-title span{
+    color:#ff1744;
 }
 
-.btn-dark {
-    background: rgba(60,60,60,.9);
+.see-all{
+    border:0;
 
-    color: white;
+    background:transparent;
+
+    color:#8b93a5;
+
+    font-size:13px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
 }
 
-.btn-dark:hover {
-    background: #555;
+.see-all:hover{
+    color:#ff1744;
 }
 
+/* ================= MOVIES ================= */
 
-/* =========================
-   SECTIUNI
-========================= */
-
-section {
-    padding: 60px 5%;
-}
-
-.title {
-    font-size: 30px;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================
-   FILME
-========================= */
-
-.movie-row {
-    display: flex;
-
-    gap: 18px;
-
-    overflow-x: auto;
-
-    padding: 10px 0 30px;
-}
-
-.movie {
-    position: relative;
-
-    min-width: 220px;
-
-    height: 320px;
-
-    border-radius: 8px;
-
-    overflow: hidden;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.movie:hover {
-    transform: scale(1.06);
-
-    z-index: 5;
-}
-
-.movie::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            transparent 35%,
-            #000
-        );
-}
-
-.movie-info {
-    position: absolute;
-
-    left: 18px;
-    bottom: 18px;
-
-    z-index: 2;
-}
-
-.movie-info h3 {
-    margin-bottom: 6px;
-
-    font-size: 19px;
-}
-
-.movie-info p {
-    color: #aaa;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   POSTERE
-========================= */
-
-.poster1 {
-    background:
-        linear-gradient(
-            145deg,
-            #ff3150,
-            #39000b,
-            #090909
-        );
-}
-
-.poster2 {
-    background:
-        linear-gradient(
-            145deg,
-            #4ca8ff,
-            #071c39,
-            #050505
-        );
-}
-
-.poster3 {
-    background:
-        linear-gradient(
-            145deg,
-            #ff8b30,
-            #3c1000,
-            #050505
-        );
-}
-
-.poster4 {
-    background:
-        linear-gradient(
-            145deg,
-            #7cff61,
-            #0b351c,
-            #050505
-        );
-}
-
-
-/* =========================
-   SERIALE
-========================= */
-
-.series-card {
-    position: relative;
-
-    min-width: 300px;
-
-    height: 180px;
-
-    border-radius: 8px;
-
-    overflow: hidden;
-
-    cursor: pointer;
-
-    background:
-        linear-gradient(
-            135deg,
-            #e50914,
-            #4a0008
-        );
-
-    transition: .3s;
-}
-
-.series-card:hover {
-    transform: scale(1.05);
-}
-
-.series-card div {
-    position: absolute;
-
-    left: 18px;
-    bottom: 18px;
-}
-
-.series-card h3 {
-    font-size: 22px;
-}
-
-.series-card p {
-    color: #ffd5da;
-
-    margin-top: 5px;
-}
-
-
-/* =========================
-   EPISOADE
-========================= */
-
-.episodes {
-    display: none;
-
-    margin-top: 25px;
-
-    padding: 25px;
-
-    background: #151515;
-
-    border-radius: 10px;
-}
-
-.episodes.active {
-    display: block;
-}
-
-.episode {
-    margin-top: 10px;
-
-    padding: 18px;
-
-    background: #222;
-
-    border-radius: 6px;
-
-    cursor: pointer;
-}
-
-.episode:hover {
-    background: #333;
-}
-
-
-/* =========================
-   PLAYER FILM
-========================= */
-
-.video-modal {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 9999;
-
-    display: none;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 20px;
-
-    background: rgba(0,0,0,.95);
-}
-
-.video-modal.active {
-    display: flex;
-}
-
-.video-box {
-    position: relative;
-
-    width: min(1000px, 100%);
-
-    padding: 20px;
-
-    background: #111;
-
-    border-radius: 12px;
-}
-
-.video-box video {
-    width: 100%;
-
-    max-height: 70vh;
-
-    background: #000;
-
-    border-radius: 8px;
-}
-
-.video-box h2 {
-    margin-top: 15px;
-}
-
-.close-video {
-    position: absolute;
-
-    top: 25px;
-    right: 25px;
-
-    width: 42px;
-    height: 42px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #000;
-
-    color: white;
-
-    font-size: 20px;
-
-    cursor: pointer;
-
-    z-index: 10;
-}
-
-.close-video:hover {
-    background: #e50914;
-}
-
-
-/* =========================
-   EXPERIENTA
-========================= */
-
-.features {
-    display: grid;
+.movies{
+    display:grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(6,minmax(0,1fr));
 
-    gap: 20px;
+    gap:14px;
 }
 
-.feature {
-    padding: 30px;
+.card{
+    min-width:0;
 
-    background: #151515;
+    border-radius:8px;
 
-    border: 1px solid #292929;
+    overflow:hidden;
 
-    border-radius: 10px;
+    background:#10131b;
+
+    cursor:pointer;
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+
+    position:relative;
 }
 
-.feature-icon {
-    font-size: 35px;
+.card:hover{
+    transform:
+        translateY(-7px)
+        scale(1.02);
 
-    margin-bottom: 15px;
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.55);
 }
 
-.feature h3 {
-    margin-bottom: 10px;
+.poster{
+    height:260px;
+
+    width:100%;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
-.feature p {
-    color: #999;
+/*
+   POSTERE FĂRĂ EMOJI
+*/
 
-    line-height: 1.6;
-}
-
-
-/* =========================
-   BANNER
-========================= */
-
-.final-banner {
-    margin: 30px 5% 60px;
-
-    padding: 70px 30px;
-
-    text-align: center;
-
-    border-radius: 15px;
-
+.p1{
     background:
         linear-gradient(
-            110deg,
+            145deg,
             #ff1744,
-            #e50914,
-            #9d0016
+            #3c0010
         );
 }
 
-.final-banner h2 {
-    font-size:
-        clamp(30px, 5vw, 55px);
-
-    margin-bottom: 15px;
+.p2{
+    background:
+        linear-gradient(
+            145deg,
+            #031c5e,
+            #1188ff
+        );
 }
 
-.final-banner p {
-    color: #ffe1e5;
-
-    margin-bottom: 25px;
+.p3{
+    background:
+        linear-gradient(
+            145deg,
+            #280037,
+            #e50044
+        );
 }
 
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    padding: 40px 5%;
-
-    border-top: 1px solid #222;
-
-    color: #777;
+.p4{
+    background:
+        linear-gradient(
+            145deg,
+            #003c34,
+            #00a988
+        );
 }
 
-.footer-logo {
-    margin-bottom: 10px;
-
-    color: white;
-
-    font-size: 25px;
-
-    font-weight: bold;
+.p5{
+    background:
+        linear-gradient(
+            145deg,
+            #351300,
+            #ff7100
+        );
 }
 
-.footer-logo span {
-    color: #e50914;
+.p6{
+    background:
+        linear-gradient(
+            145deg,
+            #141414,
+            #454545
+        );
 }
 
+.p7{
+    background:
+        linear-gradient(
+            145deg,
+            #001936,
+            #0575ff
+        );
+}
 
-/* =========================
-   MOBIL
-========================= */
+.p8{
+    background:
+        linear-gradient(
+            145deg,
+            #400000,
+            #ce0016
+        );
+}
 
-@media(max-width:800px) {
+.p9{
+    background:
+        linear-gradient(
+            145deg,
+            #21002e,
+            #a000ff
+        );
+}
 
-    .nav-links {
-        display: none;
+.p10{
+    background:
+        linear-gradient(
+            145deg,
+            #002e37,
+            #00d0ff
+        );
+}
+
+.card-info{
+    padding:11px;
+}
+
+.card-title{
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+
+    font-size:14px;
+
+    font-weight:bold;
+}
+
+.card-meta{
+    color:#7d8494;
+
+    font-size:11px;
+
+    margin-top:6px;
+}
+
+/* ================= PROGRAM ================= */
+
+.program{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:12px;
+}
+
+.program-card{
+    background:#11141d;
+
+    padding:18px;
+
+    border-radius:9px;
+
+    border:1px solid #202533;
+
+    transition:.2s;
+}
+
+.program-card:hover{
+    border-color:#ff1744;
+
+    transform:translateY(-3px);
+}
+
+.program-time{
+    color:#ff1744;
+
+    font-weight:1000;
+
+    font-size:20px;
+
+    margin-bottom:10px;
+}
+
+.program-name{
+    font-weight:bold;
+}
+
+.program-type{
+    color:#777f90;
+
+    font-size:11px;
+
+    margin-top:5px;
+}
+
+/* ================= LISTA MEA ================= */
+
+.empty{
+    background:#10131b;
+
+    border:1px dashed #303544;
+
+    border-radius:9px;
+
+    padding:35px;
+
+    text-align:center;
+
+    color:#707787;
+}
+
+.delete-btn{
+    width:100%;
+
+    margin-top:10px;
+
+    padding:8px;
+
+    border:0;
+
+    border-radius:5px;
+
+    background:#252833;
+
+    color:#ff526d;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.delete-btn:hover{
+    background:#e50914;
+    color:white;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    padding:40px;
+
+    border-top:1px solid #171b24;
+
+    background:#08090d;
+
+    color:#666d7c;
+}
+
+.footer-logo{
+    color:#ff1744;
+
+    font-size:25px;
+
+    font-weight:1000;
+
+    margin-bottom:10px;
+}
+
+/* ================= MODAL ================= */
+
+.modal{
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
+
+    background:rgba(0,0,0,.9);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(850px,100%);
+
+    background:#13161f;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 25px 80px #000;
+}
+
+.modal-banner{
+    min-height:330px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    padding:35px;
+
+    position:relative;
+
+    background:
+        radial-gradient(
+            circle at 75% 25%,
+            #136dff,
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #38000a,
+            #071a40
+        );
+}
+
+.modal-banner::after{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        linear-gradient(
+            transparent 30%,
+            #13161f
+        );
+}
+
+.modal-content{
+    position:relative;
+    z-index:2;
+}
+
+.modal-content h2{
+    font-size:38px;
+    margin-bottom:10px;
+}
+
+.modal-content p{
+    color:#babfca;
+
+    line-height:1.5;
+}
+
+.close{
+    position:absolute;
+
+    right:15px;
+    top:15px;
+
+    width:38px;
+    height:38px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#20232d;
+
+    color:white;
+
+    font-size:23px;
+
+    cursor:pointer;
+
+    z-index:10;
+}
+
+.modal-actions{
+    display:flex;
+    gap:10px;
+
+    padding:22px;
+}
+
+/* ================= SEARCH ================= */
+
+.search-overlay{
+    position:fixed;
+
+    inset:0;
+
+    z-index:6000;
+
+    display:none;
+
+    align-items:flex-start;
+    justify-content:center;
+
+    padding-top:90px;
+
+    background:rgba(0,0,0,.92);
+
+    backdrop-filter:blur(12px);
+}
+
+.search-overlay.show{
+    display:flex;
+}
+
+.search-window{
+    width:min(900px,92%);
+
+    background:#10131c;
+
+    border:1px solid #292e3d;
+
+    border-radius:14px;
+
+    padding:28px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.8);
+}
+
+.search-top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    margin-bottom:25px;
+}
+
+.search-top h2{
+    font-size:26px;
+}
+
+.search-top h2 span{
+    color:#ff1744;
+}
+
+.close-search{
+    width:40px;
+    height:40px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#20242f;
+
+    color:white;
+
+    font-size:23px;
+
+    cursor:pointer;
+}
+
+.close-search:hover{
+    background:#e50914;
+}
+
+.big-search{
+    display:flex;
+    align-items:center;
+
+    background:#181c27;
+
+    border:2px solid #343b4d;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    margin-bottom:25px;
+}
+
+.big-search:focus-within{
+    border-color:#ff1744;
+}
+
+.big-search input{
+    flex:1;
+
+    height:58px;
+
+    border:0;
+    outline:0;
+
+    background:transparent;
+
+    color:white;
+
+    padding:0 18px;
+
+    font-size:18px;
+}
+
+.big-search input::placeholder{
+    color:#6d7484;
+}
+
+.big-search button{
+    width:65px;
+
+    height:58px;
+
+    border:0;
+
+    background:#e50914;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
+}
+
+.search-help{
+    color:#7b8393;
+
+    font-size:13px;
+
+    margin-bottom:20px;
+}
+
+.search-results-title{
+    font-size:18px;
+
+    margin-bottom:15px;
+}
+
+.search-results-title span{
+    color:#ff1744;
+}
+
+.search-results{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:12px;
+
+    max-height:430px;
+
+    overflow-y:auto;
+
+    padding-right:5px;
+}
+
+.search-result-card{
+    background:#181b24;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.search-result-card:hover{
+    transform:translateY(-4px);
+
+    background:#202531;
+}
+
+.search-result-poster{
+    height:180px;
+}
+
+.search-result-info{
+    padding:10px;
+}
+
+.search-result-title{
+    font-weight:bold;
+
+    white-space:nowrap;
+
+    overflow:hidden;
+
+    text-overflow:ellipsis;
+}
+
+.search-result-meta{
+    color:#777f90;
+
+    font-size:11px;
+
+    margin-top:5px;
+}
+
+.no-results{
+    grid-column:1/-1;
+
+    text-align:center;
+
+    color:#777f90;
+
+    padding:35px;
+}
+
+/* ================= VEZI TOT ================= */
+
+.all-movies-page{
+    position:fixed;
+
+    inset:0;
+
+    z-index:7000;
+
+    background:#07080d;
+
+    display:none;
+
+    overflow-y:auto;
+
+    padding:35px 5%;
+}
+
+.all-movies-page.show{
+    display:block;
+}
+
+.all-movies-header{
+    display:flex;
+
+    align-items:center;
+
+    gap:25px;
+
+    margin-bottom:35px;
+}
+
+.all-movies-header h1{
+    font-size:32px;
+}
+
+.back-button{
+    border:0;
+
+    background:#191d27;
+
+    color:white;
+
+    padding:11px 18px;
+
+    border-radius:7px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+.back-button:hover{
+    background:#e50914;
+}
+
+.all-movies-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(6,1fr);
+
+    gap:18px;
+}
+
+/* ================= TOAST ================= */
+
+.toast{
+    position:fixed;
+
+    left:50%;
+    bottom:30px;
+
+    transform:
+        translateX(-50%)
+        translateY(30px);
+
+    background:#191d28;
+
+    border:1px solid #303646;
+
+    color:white;
+
+    padding:14px 20px;
+
+    border-radius:8px;
+
+    z-index:10000;
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transition:.3s;
+
+    box-shadow:
+        0 10px 35px rgba(0,0,0,.5);
+}
+
+.toast.show{
+    opacity:1;
+
+    transform:
+        translateX(-50%)
+        translateY(0);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:1200px){
+
+    .movies{
+        grid-template-columns:
+            repeat(4,1fr);
     }
 
-    .hero {
-        height: 650px;
+    .program{
+        grid-template-columns:
+            repeat(3,1fr);
     }
 
-    .hero-content {
-        left: 6%;
-        right: 6%;
-        bottom: 80px;
+    .search-results{
+        grid-template-columns:
+            repeat(4,1fr);
     }
 
-    .hero h1 {
-        font-size: 55px;
+    .all-movies-grid{
+        grid-template-columns:
+            repeat(4,1fr);
+    }
+}
+
+@media(max-width:850px){
+
+    .sidebar{
+        width:75px;
+        padding:25px 10px;
     }
 
-    .buttons {
-        flex-direction: column;
-
-        align-items: flex-start;
+    .logo{
+        font-size:0;
+        margin-bottom:35px;
     }
 
-    .features {
-        grid-template-columns: 1fr;
+    .logo::after{
+        content:"C";
+        font-size:28px;
+        color:#ff1744;
     }
 
-    .movie {
-        min-width: 190px;
+    .menu-title{
+        display:none;
     }
 
-    .series-card {
-        min-width: 260px;
+    .menu a{
+        justify-content:center;
+        padding:14px 5px;
     }
 
+    .menu a span:not(.icon){
+        display:none;
+    }
+
+    .sidebar-bottom{
+        left:8px;
+        right:8px;
+    }
+
+    .profile-small{
+        justify-content:center;
+        padding:8px;
+    }
+
+    .profile-small div:not(.avatar){
+        display:none;
+    }
+
+    .main{
+        margin-left:75px;
+    }
+
+    .hero{
+        min-height:500px;
+        padding:60px 25px;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .content{
+        padding:0 20px 40px;
+    }
+
+    .movies{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .program{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .search-results{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .all-movies-grid{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        padding:0 15px;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .movies{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .poster{
+        height:220px;
+    }
+
+    .program{
+        grid-template-columns:1fr;
+    }
+
+    .search-window{
+        padding:18px;
+    }
+
+    .search-results{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .search-result-poster{
+        height:150px;
+    }
+
+    .all-movies-page{
+        padding:25px 18px;
+    }
+
+    .all-movies-header{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .all-movies-grid{
+        grid-template-columns:
+            repeat(2,1fr);
+    }
 }
 
 </style>
-
 </head>
-
 
 <body>
 
+<!-- ================= SIDEBAR ================= -->
 
-<!-- =========================
-     NAVBAR
-========================= -->
+<aside class="sidebar">
 
-<nav class="navbar">
-
-    <a href="#" class="logo">
-
-        CINE<span>PLEX</span>
-
-    </a>
-
-
-    <div class="nav-links">
-
-        <a href="#filme">
-            Filme
-        </a>
-
-        <a href="#seriale">
-            Seriale
-        </a>
-
-        <a href="#top">
-            Top 10
-        </a>
-
-        <a href="#experienta">
-            Experiență
-        </a>
-
+    <div class="logo">
+        CINEPLEX
     </div>
 
-</nav>
+    <div class="menu-title">
+        MENIU
+    </div>
 
+    <nav class="menu">
 
-<!-- =========================
-     TRAILER BACKGROUND
-========================= -->
+        <a href="#acasa" class="active">
+            <span class="icon">⌂</span>
+            <span>Acasă</span>
+        </a>
 
-<header class="hero">
+        <a href="#" id="openSearch">
+            <span class="icon">⌕</span>
+            <span>Căutare</span>
+        </a>
 
+        <a href="#program">
+            <span class="icon">▣</span>
+            <span>Program</span>
+        </a>
 
-    <video
-        id="trailer"
-        class="hero-video"
-        autoplay
-        muted
-        loop
-        playsinline
-        preload="auto"
-    >
+        <a href="#popular">
+            <span class="icon">★</span>
+            <span>Popular</span>
+        </a>
 
-        <source
-            src="filme/film1.mp4"
-            type="video/mp4"
-        >
+        <a href="#lista">
+            <span class="icon">♡</span>
+            <span>Lista mea</span>
+        </a>
 
-    </video>
+    </nav>
 
+    <div class="sidebar-bottom">
 
-    <div class="hero-overlay"></div>
+        <div class="profile-small">
 
-    <div class="hero-bottom"></div>
+            <div class="avatar">
+                C
+            </div>
 
+            <div>
 
-    <div class="hero-content">
+                <div class="profile-name">
+                    Cristi
+                </div>
 
+                <div class="profile-status">
+                    CINEPLEX
+                </div>
 
-        <div class="hero-small">
-
-            CINEPLEX
+            </div>
 
         </div>
 
+    </div>
 
-        <h1>
+</aside>
 
-            FILMUL<br>
 
-            ÎNCEPE
-            <span>AICI.</span>
+<!-- ================= MAIN ================= -->
 
-        </h1>
+<div class="main">
 
+    <header class="topbar">
+
+        <div class="page-title">
+            CINEPLEX
+        </div>
+
+    </header>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="acasa">
+
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                CINEPLEX ORIGINAL
+            </div>
+
+            <h1>
+                THE LAST<br>
+                <span>WAVE</span>
+            </h1>
+
+            <div class="hero-info">
+                <span>2026</span>
+                <span>16+</span>
+                <span>4K</span>
+                <span>9.4</span>
+            </div>
+
+            <p class="hero-description">
+
+                O aventură spectaculoasă în care
+                o echipă trebuie să supraviețuiască
+                celui mai mare val creat vreodată.
+
+            </p>
+
+            <div class="buttons">
+
+                <button
+                    class="btn watch"
+                    onclick="openMovie('THE LAST WAVE')"
+                >
+                    Redă
+                </button>
+
+                <button
+                    class="btn more"
+                    onclick="openMovie('THE LAST WAVE')"
+                >
+                    Informații
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CONTENT ================= -->
+
+    <main class="content">
+
+
+        <!-- ================= POPULAR ================= -->
+
+        <section class="section" id="popular">
+
+            <div class="section-title">
+
+                <div>
+                    Populare on
+                    <span>CINEPLEX</span>
+                </div>
+
+                <button
+                    class="see-all"
+                    onclick="openAllMovies('popular')"
+                >
+                    Vezi tot
+                </button>
+
+            </div>
+
+
+            <div class="movies">
+
+
+                <div
+                    class="card"
+                    data-title="ELITE"
+                    data-meta="Dramă • 9.1"
+                    data-poster="p1"
+                    onclick="openMovie('ELITE')"
+                >
+
+                    <div class="poster p1"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            ELITE
+                        </div>
+
+                        <div class="card-meta">
+                            Dramă • 9.1
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="card"
+                    data-title="AVATAR"
+                    data-meta="SF • 9.0"
+                    data-poster="p2"
+                    onclick="openMovie('AVATAR')"
+                >
+
+                    <div class="poster p2"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            AVATAR
+                        </div>
+
+                        <div class="card-meta">
+                            SF • 9.0
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="card"
+                    data-title="LUCIFER"
+                    data-meta="Fantasy • 8.8"
+                    data-poster="p3"
+                    onclick="openMovie('LUCIFER')"
+                >
+
+                    <div class="poster p3"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            LUCIFER
+                        </div>
+
+                        <div class="card-meta">
+                            Fantasy • 8.8
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="card"
+                    data-title="MONEY HEIST"
+                    data-meta="Crime • 8.7"
+                    data-poster="p4"
+                    onclick="openMovie('MONEY HEIST')"
+                >
+
+                    <div class="poster p4"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            MONEY HEIST
+                        </div>
+
+                        <div class="card-meta">
+                            Crime • 8.7
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="card"
+                    data-title="WOODWALKERS"
+                    data-meta="Aventură • 8.6"
+                    data-poster="p5"
+                    onclick="openMovie('WOODWALKERS')"
+                >
+
+                    <div class="poster p5"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            WOODWALKERS
+                        </div>
+
+                        <div class="card-meta">
+                            Aventură • 8.6
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="card"
+                    data-title="PRISMA"
+                    data-meta="Mystery • 8.4"
+                    data-poster="p6"
+                    onclick="openMovie('PRISMA')"
+                >
+
+                    <div class="poster p6"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            PRISMA
+                        </div>
+
+                        <div class="card-meta">
+                            Mystery • 8.4
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= NOI ================= -->
+
+        <section class="section">
+
+            <div class="section-title">
+
+                <div>
+                    Noi pe
+                    <span>CINEPLEX</span>
+                </div>
+
+                <button
+                    class="see-all"
+                    onclick="openAllMovies('new')"
+                >
+                    Vezi tot
+                </button>
+
+            </div>
+
+
+            <div class="movies">
+
+
+                <div
+                    class="card"
+                    data-title="CINEPLEX NIGHT"
+                    data-meta="Original • 2026"
+                    data-poster="p7"
+                    onclick="openMovie('CINEPLEX NIGHT')"
+                >
+
+                    <div class="poster p7"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            CINEPLEX NIGHT
+                        </div>
+
+                        <div class="card-meta">
+                            Original • 2026
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="card"
+                    data-title="OLYMPOS"
+                    data-meta="Dramă • 2026"
+                    data-poster="p8"
+                    onclick="openMovie('OLYMPOS')"
+                >
+
+                    <div class="poster p8"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            OLYMPOS
+                        </div>
+
+                        <div class="card-meta">
+                            Dramă • 2026
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="card"
+                    data-title="LEVITICUS"
+                    data-meta="Thriller • 2026"
+                    data-poster="p9"
+                    onclick="openMovie('LEVITICUS')"
+                >
+
+                    <div class="poster p9"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            LEVITICUS
+                        </div>
+
+                        <div class="card-meta">
+                            Thriller • 2026
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="card"
+                    data-title="NIGHT CITY"
+                    data-meta="Acțiune • 2026"
+                    data-poster="p10"
+                    onclick="openMovie('NIGHT CITY')"
+                >
+
+                    <div class="poster p10"></div>
+
+                    <div class="card-info">
+
+                        <div class="card-title">
+                            NIGHT CITY
+                        </div>
+
+                        <div class="card-meta">
+                            Acțiune • 2026
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROGRAM ================= -->
+
+        <section class="section" id="program">
+
+            <div class="section-title">
+
+                <div>
+                    Program
+                    <span>CINEPLEX</span>
+                </div>
+
+            </div>
+
+
+            <div class="program">
+
+                <div class="program-card">
+
+                    <div class="program-time">
+                        19:00
+                    </div>
+
+                    <div class="program-name">
+                        ELITE
+                    </div>
+
+                    <div class="program-type">
+                        Film • Dramă
+                    </div>
+
+                </div>
+
+
+                <div class="program-card">
+
+                    <div class="program-time">
+                        20:00
+                    </div>
+
+                    <div class="program-name">
+                        WOODWALKERS
+                    </div>
+
+                    <div class="program-type">
+                        Film • Aventură
+                    </div>
+
+                </div>
+
+
+                <div class="program-card">
+
+                    <div class="program-time">
+                        21:00
+                    </div>
+
+                    <div class="program-name">
+                        LUCIFER
+                    </div>
+
+                    <div class="program-type">
+                        Serial
+                    </div>
+
+                </div>
+
+
+                <div class="program-card">
+
+                    <div class="program-time">
+                        22:00
+                    </div>
+
+                    <div class="program-name">
+                        LEVITICUS
+                    </div>
+
+                    <div class="program-type">
+                        Thriller
+                    </div>
+
+                </div>
+
+
+                <div class="program-card">
+
+                    <div class="program-time">
+                        23:00
+                    </div>
+
+                    <div class="program-name">
+                        AVATAR
+                    </div>
+
+                    <div class="program-type">
+                        SF • Aventură
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= LISTA MEA ================= -->
+
+        <section class="section" id="lista">
+
+            <div class="section-title">
+
+                <div>
+                    Lista
+                    <span>mea</span>
+                </div>
+
+            </div>
+
+
+            <div
+                class="empty"
+                id="emptyList"
+            >
+                Filmele adăugate în lista ta
+                vor apărea aici.
+            </div>
+
+
+            <div
+                class="movies"
+                id="myList"
+                style="margin-top:15px;"
+            ></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-logo">
+            CINEPLEX
+        </div>
 
         <p>
-
-            Filme, seriale și experiențe
-            de cinema într-un singur loc.
-
+            © 2026 CINEPLEX
         </p>
 
+    </footer>
 
-        <div class="buttons">
+</div>
 
 
-            <button
-                type="button"
-                class="btn btn-white"
-                onclick="playTrailer()"
-            >
-
-                ▶ PLAY TRAILER
-
-            </button>
-
-
-            <a
-                href="#filme"
-                class="btn btn-dark"
-            >
-
-                🎬 Vezi filmele
-
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     FILME
-========================= -->
-
-<section id="filme">
-
-
-    <h2 class="title">
-
-        🎬 Filme populare
-
-    </h2>
-
-
-    <div class="movie-row">
-
-
-        <div
-            class="movie poster1"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'NEON CITY'
-            )"
-        >
-
-            <div class="movie-info">
-
-                <h3>
-                    NEON CITY
-                </h3>
-
-                <p>
-                    SF · 16+ · 2h 08m
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="movie poster2"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'BEYOND BLUE'
-            )"
-        >
-
-            <div class="movie-info">
-
-                <h3>
-                    BEYOND BLUE
-                </h3>
-
-                <p>
-                    Aventură · AG · 1h 56m
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="movie poster3"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'LAST SIGNAL'
-            )"
-        >
-
-            <div class="movie-info">
-
-                <h3>
-                    LAST SIGNAL
-                </h3>
-
-                <p>
-                    Thriller · 15+ · 2h 14m
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="movie poster4"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'WILD HEART'
-            )"
-        >
-
-            <div class="movie-info">
-
-                <h3>
-                    WILD HEART
-                </h3>
-
-                <p>
-                    Dramă · 12+ · 1h 48m
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SERIALE
-========================= -->
-
-<section id="seriale">
-
-
-    <h2 class="title">
-
-        📺 Seriale
-
-    </h2>
-
-
-    <div class="movie-row">
-
-
-        <div
-            class="series-card"
-            onclick="showEpisodes('series1')"
-        >
-
-            <div>
-
-                <h3>
-                    THE LAST CITY
-                </h3>
-
-                <p>
-                    2 sezoane · 16+
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="series-card"
-            onclick="showEpisodes('series2')"
-        >
-
-            <div>
-
-                <h3>
-                    DARK SIGNAL
-                </h3>
-
-                <p>
-                    1 sezon · 15+
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="series-card"
-            onclick="showEpisodes('series3')"
-        >
-
-            <div>
-
-                <h3>
-                    WILD WORLD
-                </h3>
-
-                <p>
-                    3 sezoane · 12+
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-
-    <!-- SERIA 1 -->
-
-    <div
-        id="series1"
-        class="episodes"
-    >
-
-        <h2>
-
-            THE LAST CITY — Episoade
-
-        </h2>
-
-
-        <div
-            class="episode"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'The Last City — Episodul 1'
-            )"
-        >
-
-            ▶ Episodul 1 — Începutul
-
-        </div>
-
-
-        <div
-            class="episode"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'The Last City — Episodul 2'
-            )"
-        >
-
-            ▶ Episodul 2 — Semnalul
-
-        </div>
-
-
-        <div
-            class="episode"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'The Last City — Episodul 3'
-            )"
-        >
-
-            ▶ Episodul 3 — Fuga
-
-        </div>
-
-    </div>
-
-
-    <!-- SERIA 2 -->
-
-    <div
-        id="series2"
-        class="episodes"
-    >
-
-        <h2>
-
-            DARK SIGNAL — Episoade
-
-        </h2>
-
-
-        <div
-            class="episode"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'Dark Signal — Episodul 1'
-            )"
-        >
-
-            ▶ Episodul 1
-
-        </div>
-
-
-        <div
-            class="episode"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'Dark Signal — Episodul 2'
-            )"
-        >
-
-            ▶ Episodul 2
-
-        </div>
-
-    </div>
-
-
-    <!-- SERIA 3 -->
-
-    <div
-        id="series3"
-        class="episodes"
-    >
-
-        <h2>
-
-            WILD WORLD — Episoade
-
-        </h2>
-
-
-        <div
-            class="episode"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'Wild World — Episodul 1'
-            )"
-        >
-
-            ▶ Episodul 1
-
-        </div>
-
-
-        <div
-            class="episode"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'Wild World — Episodul 2'
-            )"
-        >
-
-            ▶ Episodul 2
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PLAYER
-========================= -->
+<!-- ================= MODAL ================= -->
 
 <div
-    id="videoModal"
-    class="video-modal"
+    class="modal"
+    id="movieModal"
 >
 
-
-    <div class="video-box">
-
+    <div class="modal-box">
 
         <button
-            type="button"
-            class="close-video"
-            onclick="closeVideo()"
+            class="close"
+            onclick="closeMovie()"
         >
-
-            ✕
-
+            ×
         </button>
 
+        <div class="modal-banner">
 
-        <video
-            id="videoPlayer"
-            controls
-            playsinline
-        >
+            <div class="modal-content">
 
-            <source
-                id="videoSource"
-                src=""
-                type="video/mp4"
+                <h2 id="modalTitle">
+                    Film
+                </h2>
+
+                <p>
+                    Descoperă acest titlu pe CINEPLEX.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button
+                class="btn red"
+                onclick="playMovie()"
+            >
+                Redă filmul
+            </button>
+
+            <button
+                class="btn more"
+                onclick="addToList()"
+            >
+                Lista mea
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ================= SEARCH ================= -->
+
+<div
+    class="search-overlay"
+    id="searchOverlay"
+>
+
+    <div class="search-window">
+
+        <div class="search-top">
+
+            <h2>
+                Caută pe
+                <span>CINEPLEX</span>
+            </h2>
+
+            <button
+                class="close-search"
+                id="closeSearch"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="big-search">
+
+            <input
+                id="bigSearchInput"
+                type="text"
+                placeholder="Caută un film sau serial..."
+                autocomplete="off"
             >
 
-        </video>
+            <button
+                id="bigSearchButton"
+            >
+                Căutare
+            </button>
+
+        </div>
 
 
-        <h2 id="videoTitle">
+        <div class="search-help">
 
-            Film
+            Scrie numele unui film, de exemplu:
+            <b>AVATAR</b>,
+            <b>ELITE</b> sau
+            <b>LUCIFER</b>.
 
-        </h2>
+        </div>
 
+
+        <div class="search-results-title">
+
+            Rezultate
+            <span>CINEPLEX</span>
+
+        </div>
+
+
+        <div
+            class="search-results"
+            id="searchResults"
+        ></div>
 
     </div>
 
 </div>
 
 
-<!-- =========================
-     EXPERIENTA
-========================= -->
+<!-- ================= VEZI TOT ================= -->
 
-<section id="experienta">
+<div
+    class="all-movies-page"
+    id="allMoviesPage"
+>
 
+    <div class="all-movies-header">
 
-    <h2 class="title">
+        <button
+            class="back-button"
+            onclick="closeAllMovies()"
+        >
+            Înapoi
+        </button>
 
-        Experiența CINEPLEX
-
-    </h2>
-
-
-    <div class="features">
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🎬
-            </div>
-
-            <h3>
-                Săli premium
-            </h3>
-
-            <p>
-                Imagine spectaculoasă
-                și sunet puternic.
-            </p>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🍿
-            </div>
-
-            <h3>
-                Snacks
-            </h3>
-
-            <p>
-                Popcorn și snacks
-                pentru filmul preferat.
-            </p>
-
-        </div>
-
-
-        <div class="feature">
-
-            <div class="feature-icon">
-                🎟️
-            </div>
-
-            <h3>
-                Bilete online
-            </h3>
-
-            <p>
-                Alege rapid filmul
-                și locul tău.
-            </p>
-
-        </div>
-
+        <h1 id="allMoviesTitle">
+            Toate filmele
+        </h1>
 
     </div>
 
-</section>
 
-
-<!-- =========================
-     TOP 10
-========================= -->
-
-<section id="top">
-
-
-    <h2 class="title">
-
-        🔥 Top 10 CINEPLEX
-
-    </h2>
-
-
-    <div class="movie-row">
-
-
-        <div
-            class="movie poster1"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'NEON CITY'
-            )"
-        >
-
-            <div class="movie-info">
-
-                <h3>
-                    #1 NEON CITY
-                </h3>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="movie poster3"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'LAST SIGNAL'
-            )"
-        >
-
-            <div class="movie-info">
-
-                <h3>
-                    #2 LAST SIGNAL
-                </h3>
-
-            </div>
-
-        </div>
-
-
-        <div
-            class="movie poster2"
-            onclick="openVideo(
-                'filme/film1.mp4',
-                'BEYOND BLUE'
-            )"
-        >
-
-            <div class="movie-info">
-
-                <h3>
-                    #3 BEYOND BLUE
-                </h3>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     BANNER
-========================= -->
-
-<div class="final-banner">
-
-
-    <h2>
-
-        Gata pentru următorul film?
-
-    </h2>
-
-
-    <p>
-
-        Alege un film și începe vizionarea.
-
-    </p>
-
-
-    <a
-        href="#filme"
-        class="btn btn-white"
-    >
-
-        🎬 Vezi filmele
-
-    </a>
-
+    <div
+        class="all-movies-grid"
+        id="allMoviesGrid"
+    ></div>
 
 </div>
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+<!-- ================= TOAST ================= -->
 
-<footer>
-
-
-    <div class="footer-logo">
-
-        CINE<span>PLEX</span>
-
-    </div>
-
-
-    <p>
-
-        © 2026 CINEPLEX România —
-        Concept demo
-
-    </p>
-
-
-</footer>
+<div
+    class="toast"
+    id="toast"
+></div>
 
 
 <script>
 
-/* =========================
-   TRAILER AUTOMAT
-========================= */
+/* =====================================================
+   VARIABILE
+===================================================== */
 
-const trailer =
-    document.getElementById("trailer");
+let currentMovie = "";
+
+let toastTimer;
 
 
-function playTrailer() {
+/* =====================================================
+   ELEMENTE
+===================================================== */
 
-    trailer.muted = true;
+const movieModal =
+    document.getElementById(
+        "movieModal"
+    );
 
-    trailer.play()
-        .then(function() {
+const searchOverlay =
+    document.getElementById(
+        "searchOverlay"
+    );
 
-            console.log(
-                "Trailer pornit!"
+const bigSearchInput =
+    document.getElementById(
+        "bigSearchInput"
+    );
+
+const bigSearchButton =
+    document.getElementById(
+        "bigSearchButton"
+    );
+
+const searchResults =
+    document.getElementById(
+        "searchResults"
+    );
+
+
+/* =====================================================
+   FILME
+===================================================== */
+
+const allCards =
+    Array.from(
+        document.querySelectorAll(
+            ".main .card"
+        )
+    );
+
+
+/* =====================================================
+   DESCHIDE CĂUTAREA
+===================================================== */
+
+document
+    .getElementById("openSearch")
+    .addEventListener(
+        "click",
+        function(event){
+
+            event.preventDefault();
+
+            searchOverlay.classList.add(
+                "show"
             );
 
-        })
-        .catch(function(error) {
+            bigSearchInput.focus();
 
-            console.log(
-                "Trailerul nu poate porni:",
-                error
-            );
+            showSearchResults("");
 
-        });
+        }
+    );
+
+
+/* =====================================================
+   ÎNCHIDE CĂUTAREA
+===================================================== */
+
+document
+    .getElementById("closeSearch")
+    .addEventListener(
+        "click",
+        closeSearch
+    );
+
+
+function closeSearch(){
+
+    searchOverlay.classList.remove(
+        "show"
+    );
+
+    bigSearchInput.value = "";
+
+    searchResults.innerHTML = "";
 
 }
 
 
-/* PORNIRE AUTOMATA */
+/* =====================================================
+   CĂUTARE
+===================================================== */
 
-window.addEventListener(
-    "load",
-    function() {
+function showSearchResults(text){
 
-        playTrailer();
+    searchResults.innerHTML = "";
+
+
+    const matches =
+        allCards.filter(
+            function(card){
+
+                const title =
+                    (
+                        card.dataset.title ||
+                        ""
+                    )
+                    .toLowerCase();
+
+                return (
+                    text === "" ||
+                    title.includes(text)
+                );
+
+            }
+        );
+
+
+    if(
+        matches.length === 0
+    ){
+
+        searchResults.innerHTML = `
+
+            <div class="no-results">
+                Nu am găsit niciun rezultat.
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    matches.forEach(
+        function(card){
+
+            const title =
+                card.dataset.title ||
+                "Film";
+
+            const meta =
+                card.dataset.meta ||
+                "CINEPLEX";
+
+            const poster =
+                card.dataset.poster ||
+                "p1";
+
+
+            const result =
+                document.createElement(
+                    "div"
+                );
+
+
+            result.className =
+                "search-result-card";
+
+
+            result.innerHTML = `
+
+                <div class="
+                    search-result-poster
+                    ${poster}
+                "></div>
+
+                <div class="
+                    search-result-info
+                ">
+
+                    <div class="
+                        search-result-title
+                    ">
+                        ${escapeHTML(title)}
+                    </div>
+
+                    <div class="
+                        search-result-meta
+                    ">
+                        ${escapeHTML(meta)}
+                    </div>
+
+                </div>
+
+            `;
+
+
+            result.addEventListener(
+                "click",
+                function(){
+
+                    closeSearch();
+
+                    openMovie(title);
+
+                }
+            );
+
+
+            searchResults.appendChild(
+                result
+            );
+
+        }
+    );
+
+}
+
+
+/* ================= SEARCH LIVE ================= */
+
+bigSearchInput.addEventListener(
+    "input",
+    function(){
+
+        showSearchResults(
+            this.value
+            .toLowerCase()
+            .trim()
+        );
 
     }
 );
 
 
-/* =========================
-   PLAYER FILM
-========================= */
+/* ================= ENTER ================= */
 
-function openVideo(video, title) {
+bigSearchInput.addEventListener(
+    "keydown",
+    function(event){
 
-    const modal =
-        document.getElementById(
-            "videoModal"
+        if(
+            event.key === "Enter"
+        ){
+
+            event.preventDefault();
+
+            showSearchResults(
+                this.value
+                .toLowerCase()
+                .trim()
+            );
+
+        }
+
+    }
+);
+
+
+/* ================= SEARCH BUTTON ================= */
+
+bigSearchButton.addEventListener(
+    "click",
+    function(){
+
+        showSearchResults(
+            bigSearchInput.value
+            .toLowerCase()
+            .trim()
         );
 
-    const player =
-        document.getElementById(
-            "videoPlayer"
-        );
-
-    const source =
-        document.getElementById(
-            "videoSource"
-        );
-
-    const titleElement =
-        document.getElementById(
-            "videoTitle"
-        );
+    }
+);
 
 
-    source.src = video;
+/* =====================================================
+   OPEN MOVIE
+===================================================== */
 
-    titleElement.textContent =
-        title;
+function openMovie(title){
 
-    player.load();
+    currentMovie = title;
 
-    modal.classList.add(
-        "active"
-    );
+    document
+        .getElementById("modalTitle")
+        .textContent = title;
 
-
-    player.play()
-        .catch(function() {});
-
-}
-
-
-/* =========================
-   INCHIDE PLAYER
-========================= */
-
-function closeVideo() {
-
-    const modal =
-        document.getElementById(
-            "videoModal"
-        );
-
-    const player =
-        document.getElementById(
-            "videoPlayer"
-        );
-
-
-    player.pause();
-
-    player.currentTime = 0;
-
-    modal.classList.remove(
-        "active"
+    movieModal.classList.add(
+        "show"
     );
 
 }
 
 
-/* =========================
+/* =====================================================
+   CLOSE MOVIE
+===================================================== */
+
+function closeMovie(){
+
+    movieModal.classList.remove(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   PLAY
+===================================================== */
+
+function playMovie(){
+
+    showToast(
+        "Se pregătește: " +
+        currentMovie
+    );
+
+}
+
+
+/* =====================================================
+   ADD TO LIST
+===================================================== */
+
+function addToList(){
+
+    const list =
+        document.getElementById(
+            "myList"
+        );
+
+    const empty =
+        document.getElementById(
+            "emptyList"
+        );
+
+
+    const existing =
+        Array.from(
+            list.querySelectorAll(
+                ".card"
+            )
+        )
+        .some(
+            function(card){
+
+                return (
+                    card.dataset.title ||
+                    ""
+                )
+                .toLowerCase()
+                ===
+                currentMovie
+                    .toLowerCase();
+
+            }
+        );
+
+
+    if(existing){
+
+        showToast(
+            "Filmul este deja în Lista mea."
+        );
+
+        closeMovie();
+
+        return;
+    }
+
+
+    empty.style.display =
+        "none";
+
+
+    const card =
+        document.createElement(
+            "div"
+        );
+
+
+    card.className = "card";
+
+    card.dataset.title =
+        currentMovie;
+
+
+    card.innerHTML = `
+
+        <div class="poster p1"></div>
+
+        <div class="card-info">
+
+            <div class="card-title">
+                ${escapeHTML(currentMovie)}
+            </div>
+
+            <div class="card-meta">
+                Lista mea
+            </div>
+
+            <button
+                class="delete-btn"
+                type="button"
+            >
+                Șterge
+            </button>
+
+        </div>
+
+    `;
+
+
+    card.addEventListener(
+        "click",
+        function(event){
+
+            if(
+                event.target.closest(
+                    ".delete-btn"
+                )
+            ){
+
+                return;
+            }
+
+            openMovie(
+                currentMovie
+            );
+
+        }
+    );
+
+
+    const deleteButton =
+        card.querySelector(
+            ".delete-btn"
+        );
+
+
+    deleteButton.addEventListener(
+        "click",
+        function(event){
+
+            event.stopPropagation();
+
+            deleteFromList(card);
+
+        }
+    );
+
+
+    list.appendChild(card);
+
+
+    showToast(
+        currentMovie +
+        " a fost adăugat în Lista mea."
+    );
+
+
+    closeMovie();
+
+}
+
+
+/* =====================================================
+   DELETE
+===================================================== */
+
+function deleteFromList(card){
+
+    const title =
+        card.dataset.title ||
+        "Film";
+
+
+    card.remove();
+
+
+    const list =
+        document.getElementById(
+            "myList"
+        );
+
+    const empty =
+        document.getElementById(
+            "emptyList"
+        );
+
+
+    if(
+        list.children.length === 0
+    ){
+
+        empty.style.display =
+            "block";
+
+    }
+
+
+    showToast(
+        title +
+        " a fost șters din Lista mea."
+    );
+
+}
+
+
+/* =====================================================
+   VEZI TOT
+===================================================== */
+
+function openAllMovies(type){
+
+    const page =
+        document.getElementById(
+            "allMoviesPage"
+        );
+
+    const title =
+        document.getElementById(
+            "allMoviesTitle"
+        );
+
+    const grid =
+        document.getElementById(
+            "allMoviesGrid"
+        );
+
+
+    grid.innerHTML = "";
+
+
+    if(
+        type === "popular"
+    ){
+
+        title.textContent =
+            "Populare on CINEPLEX";
+
+    }else{
+
+        title.textContent =
+            "Noi pe CINEPLEX";
+
+    }
+
+
+    let selectedCards;
+
+
+    if(
+        type === "popular"
+    ){
+
+        selectedCards =
+            allCards.slice(0,6);
+
+    }else{
+
+        selectedCards =
+            allCards.slice(6);
+
+    }
+
+
+    selectedCards.forEach(
+        function(card){
+
+            const clone =
+                card.cloneNode(true);
+
+
+            const deleteButton =
+                clone.querySelector(
+                    ".delete-btn"
+                );
+
+
+            if(deleteButton){
+
+                deleteButton.remove();
+
+            }
+
+
+            const movieTitle =
+                card.dataset.title ||
+                "Film";
+
+
+            clone.onclick =
+                function(){
+
+                    closeAllMovies();
+
+                    openMovie(
+                        movieTitle
+                    );
+
+                };
+
+
+            grid.appendChild(
+                clone
+            );
+
+        }
+    );
+
+
+    page.classList.add(
+        "show"
+    );
+
+}
+
+
+/* =====================================================
+   ÎNCHIDE VEZI TOT
+===================================================== */
+
+function closeAllMovies(){
+
+    document
+        .getElementById(
+            "allMoviesPage"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* =====================================================
+   CLICK OUTSIDE MODAL
+===================================================== */
+
+movieModal.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target === movieModal
+        ){
+
+            closeMovie();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   CLICK OUTSIDE SEARCH
+===================================================== */
+
+searchOverlay.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target === searchOverlay
+        ){
+
+            closeSearch();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
    ESC
-========================= */
+===================================================== */
 
 document.addEventListener(
     "keydown",
-    function(event) {
+    function(event){
 
-        if (
+        if(
             event.key === "Escape"
-        ) {
+        ){
 
-            closeVideo();
+            closeMovie();
+
+            closeSearch();
+
+            closeAllMovies();
 
         }
 
@@ -1593,57 +2788,63 @@ document.addEventListener(
 );
 
 
-/* =========================
-   SERIALE
-========================= */
+/* =====================================================
+   TOAST
+===================================================== */
 
-function showEpisodes(id) {
+function showToast(message){
 
-    const allEpisodes =
-        document.querySelectorAll(
-            ".episodes"
+    const toast =
+        document.getElementById(
+            "toast"
         );
 
 
-    allEpisodes.forEach(
-        function(item) {
+    toast.textContent =
+        message;
 
-            item.classList.remove(
-                "active"
-            );
 
-        }
+    toast.classList.add(
+        "show"
     );
 
 
-    const selected =
-        document.getElementById(id);
-
-
-    if (!selected) {
-
-        return;
-
-    }
-
-
-    selected.classList.add(
-        "active"
+    clearTimeout(
+        toastTimer
     );
 
 
-    selected.scrollIntoView({
+    toastTimer =
+        setTimeout(
+            function(){
 
-        behavior: "smooth",
+                toast.classList.remove(
+                    "show"
+                );
 
-        block: "center"
+            },
+            2500
+        );
 
-    });
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(text){
+
+    return String(text)
+        .replace(/&/g,"&amp;")
+        .replace(/</g,"&lt;")
+        .replace(/>/g,"&gt;")
+        .replace(/"/g,"&quot;")
+        .replace(/'/g,"&#039;");
 
 }
 
 </script>
-
 
 </body>
 </html>
