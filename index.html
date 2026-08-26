@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -6,6 +7,11 @@
 <title>CINEPLEX</title>
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -23,14 +29,19 @@ body{
     overflow-x:hidden;
 }
 
-/* ================= SIDEBAR ================= */
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
 
 .sidebar{
     position:fixed;
     left:0;
     top:0;
     bottom:0;
+
     width:240px;
+
     padding:30px 18px;
 
     background:linear-gradient(
@@ -40,14 +51,17 @@ body{
     );
 
     border-right:1px solid #202432;
+
     z-index:1000;
 }
 
 .logo{
     text-align:center;
+
     font-size:30px;
     font-weight:1000;
     letter-spacing:3px;
+
     margin-bottom:45px;
 
     background:linear-gradient(
@@ -64,10 +78,14 @@ body{
 
 .menu-title{
     color:#606678;
+
     font-size:11px;
     font-weight:bold;
+
     padding:0 15px;
+
     margin-bottom:10px;
+
     text-transform:uppercase;
     letter-spacing:1px;
 }
@@ -81,14 +99,22 @@ body{
 .menu a{
     display:flex;
     align-items:center;
+
     gap:14px;
+
     padding:13px 15px;
+
     border-radius:9px;
+
     color:#aeb3c0;
+
     text-decoration:none;
+
     font-size:15px;
     font-weight:bold;
+
     cursor:pointer;
+
     transition:.2s;
 }
 
@@ -99,45 +125,62 @@ body{
 
 .menu a.active{
     background:rgba(255,23,68,.15);
+
     border-left:3px solid #ff1744;
+
     color:#fff;
 }
 
 .icon{
     width:22px;
+
     text-align:center;
+
+    font-size:18px;
 }
 
 .sidebar-bottom{
     position:absolute;
+
     left:18px;
     right:18px;
+
     bottom:25px;
 }
 
 .profile-small{
     display:flex;
+
     align-items:center;
+
     gap:12px;
+
     padding:12px;
+
     border-radius:10px;
+
     background:#11141e;
 }
 
 .avatar{
     width:38px;
     height:38px;
+
     border-radius:9px;
+
     display:flex;
+
     align-items:center;
     justify-content:center;
+
     font-weight:bold;
 
-    background:linear-gradient(
-        135deg,
-        #ff1744,
-        #146dff
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #ff1744,
+            #146dff
+        );
 }
 
 .profile-name{
@@ -146,27 +189,40 @@ body{
 
 .profile-status{
     color:#737889;
+
     font-size:11px;
+
     margin-top:3px;
 }
 
-/* ================= MAIN ================= */
+
+/* =====================================================
+   MAIN
+===================================================== */
 
 .main{
     margin-left:240px;
+
     min-height:100vh;
 }
 
 .topbar{
     height:78px;
+
     display:flex;
+
     align-items:center;
+
     padding:0 38px;
+
     position:sticky;
+
     top:0;
+
     z-index:900;
 
     background:rgba(7,8,13,.92);
+
     backdrop-filter:blur(14px);
 
     border-bottom:1px solid #171b25;
@@ -177,14 +233,22 @@ body{
     font-weight:bold;
 }
 
-/* ================= HERO ================= */
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
     min-height:550px;
+
     position:relative;
+
     display:flex;
+
     align-items:flex-end;
+
     padding:70px 50px 65px;
+
     overflow:hidden;
 
     background:
@@ -208,7 +272,9 @@ body{
 
 .hero::before{
     content:"";
+
     position:absolute;
+
     inset:0;
 
     background:
@@ -222,10 +288,13 @@ body{
 
 .hero::after{
     content:"";
+
     position:absolute;
+
     left:0;
     right:0;
     bottom:0;
+
     height:170px;
 
     background:
@@ -237,23 +306,32 @@ body{
 
 .hero-content{
     max-width:620px;
+
     position:relative;
+
     z-index:2;
 }
 
 .hero-badge{
     display:inline-block;
+
     padding:8px 13px;
+
     border-radius:5px;
+
     background:#e50914;
+
     font-size:12px;
     font-weight:bold;
+
     margin-bottom:18px;
 }
 
 .hero h1{
     font-size:64px;
+
     line-height:.95;
+
     margin-bottom:17px;
 }
 
@@ -263,17 +341,25 @@ body{
 
 .hero-info{
     display:flex;
+
     gap:15px;
+
     color:#b6bbc7;
+
     font-size:13px;
+
     margin-bottom:16px;
 }
 
 .hero-description{
     color:#c8ccd5;
+
     font-size:16px;
+
     line-height:1.6;
+
     margin-bottom:25px;
+
     max-width:600px;
 }
 
@@ -284,11 +370,17 @@ body{
 
 .btn{
     border:0;
+
     padding:13px 22px;
+
     border-radius:6px;
+
     font-size:14px;
+
     font-weight:bold;
+
     cursor:pointer;
+
     transition:.2s;
 }
 
@@ -311,7 +403,10 @@ body{
     color:#fff;
 }
 
-/* ================= CONTENT ================= */
+
+/* =====================================================
+   CONTENT
+===================================================== */
 
 .content{
     padding:0 38px 50px;
@@ -323,9 +418,13 @@ body{
 
 .section-title{
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     font-size:22px;
+
     margin-bottom:15px;
 }
 
@@ -335,10 +434,15 @@ body{
 
 .see-all{
     border:0;
+
     background:transparent;
+
     color:#8b93a5;
+
     font-size:13px;
+
     font-weight:bold;
+
     cursor:pointer;
 }
 
@@ -346,35 +450,61 @@ body{
     color:#ff1744;
 }
 
-/* ================= MOVIES ================= */
+
+/* =====================================================
+   MOVIES
+===================================================== */
 
 .movies{
     display:grid;
-    grid-template-columns:repeat(6,minmax(0,1fr));
+
+    grid-template-columns:
+        repeat(6,minmax(0,1fr));
+
     gap:14px;
 }
 
 .card{
     min-width:0;
+
     border-radius:8px;
+
     overflow:hidden;
+
     background:#10131b;
+
     cursor:pointer;
-    transition:.25s;
+
+    transition:
+        transform .25s,
+        box-shadow .25s;
+
     position:relative;
 }
 
 .card:hover{
-    transform:translateY(-7px) scale(1.02);
-    box-shadow:0 18px 35px rgba(0,0,0,.55);
+    transform:
+        translateY(-7px)
+        scale(1.02);
+
+    box-shadow:
+        0 18px 35px rgba(0,0,0,.55);
 }
 
 .poster{
     height:260px;
+
     width:100%;
+
     position:relative;
+
     overflow:hidden;
 }
+
+
+/* =====================================================
+   POSTERE
+===================================================== */
 
 .p1{
     background:
@@ -445,25 +575,39 @@ body{
         center center / cover no-repeat;
 }
 
+
+/* =====================================================
+   CARD INFO
+===================================================== */
+
 .card-info{
     padding:11px;
 }
 
 .card-title{
     white-space:nowrap;
+
     overflow:hidden;
+
     text-overflow:ellipsis;
+
     font-size:14px;
+
     font-weight:bold;
 }
 
 .card-meta{
     color:#7d8494;
+
     font-size:11px;
+
     margin-top:6px;
 }
 
-/* ================= LEVITICUS ================= */
+
+/* =====================================================
+   LEVITICUS LOCK
+===================================================== */
 
 .locked-card{
     cursor:not-allowed;
@@ -471,6 +615,7 @@ body{
 
 .locked-card:hover{
     transform:none;
+
     box-shadow:none;
 }
 
@@ -480,16 +625,22 @@ body{
 
 .lock-overlay{
     position:absolute;
+
     inset:0;
+
     background:rgba(0,0,0,.58);
+
     z-index:2;
 }
 
 .lock-image{
     position:absolute;
+
     left:50%;
     top:34%;
-    transform:translate(-50%,-50%);
+
+    transform:
+        translate(-50%,-50%);
 
     width:72px;
     height:82px;
@@ -505,31 +656,41 @@ body{
 
 .lock-shackle{
     position:absolute;
+
     left:20px;
     top:0;
 
     width:32px;
     height:40px;
 
-    border:7px solid #ddd;
+    border:
+        7px solid
+        #ddd;
+
     border-bottom:0;
 
-    border-radius:20px 20px 0 0;
+    border-radius:
+        20px 20px 0 0;
 }
 
 .lock-body{
     position:absolute;
+
     left:8px;
     right:8px;
+
     bottom:0;
 
     height:48px;
 
     background:#d8d8d8;
+
     border-radius:8px;
 
     box-shadow:
-        inset 0 0 0 2px #777;
+        inset
+        0 0 0 2px
+        #777;
 }
 
 .lock-keyhole{
@@ -541,9 +702,11 @@ body{
     left:50%;
     top:16px;
 
-    transform:translateX(-50%);
+    transform:
+        translateX(-50%);
 
     background:#333;
+
     border-radius:50%;
 }
 
@@ -567,22 +730,27 @@ body{
     left:50%;
     top:62%;
 
-    transform:translate(-50%,-50%);
+    transform:
+        translate(-50%,-50%);
 
     z-index:7;
 
     padding:10px 15px;
 
     background:#e50914;
+
     color:#fff;
 
     border:2px solid #fff;
+
     border-radius:6px;
 
     font-size:13px;
+
     font-weight:1000;
 
     letter-spacing:1px;
+
     white-space:nowrap;
 
     box-shadow:
@@ -590,78 +758,44 @@ body{
         rgba(229,9,20,.55);
 }
 
-/* ================= TICKETS ================= */
 
-.ticket-card{
-    min-height:250px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #151923,
-            #21101a
-        );
-
-    border:1px solid #303646;
-}
-
-.ticket-content{
-    width:100%;
-    padding:28px;
-    text-align:center;
-}
-
-.ticket-title{
-    font-size:20px;
-    font-weight:bold;
-    margin-bottom:14px;
-}
-
-.ticket-price{
-    font-size:30px;
-    font-weight:1000;
-    color:#ff1744;
-    margin-bottom:20px;
-}
-
-.ticket-button{
-    border:0;
-    background:#e50914;
-    color:#fff;
-    padding:11px 25px;
-    border-radius:7px;
-    font-size:14px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* ================= LISTA ================= */
+/* =====================================================
+   LISTA MEA
+===================================================== */
 
 .empty{
     background:#10131b;
-    border:1px dashed #303544;
+
+    border:
+        1px dashed
+        #303544;
+
     border-radius:9px;
+
     padding:35px;
+
     text-align:center;
+
     color:#707787;
 }
 
 .delete-btn{
     width:100%;
+
     margin-top:10px;
+
     padding:8px;
 
     border:0;
+
     border-radius:5px;
 
     background:#252833;
+
     color:#ff526d;
 
     font-size:12px;
+
     font-weight:bold;
 
     cursor:pointer;
@@ -669,37 +803,56 @@ body{
 
 .delete-btn:hover{
     background:#e50914;
+
     color:#fff;
 }
 
-/* ================= FOOTER ================= */
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
     padding:40px;
-    border-top:1px solid #171b24;
+
+    border-top:
+        1px solid
+        #171b24;
+
     background:#08090d;
+
     color:#666d7c;
 }
 
 .footer-logo{
     color:#ff1744;
+
     font-size:25px;
+
     font-weight:1000;
+
     margin-bottom:10px;
 }
 
-/* ================= MODAL ================= */
+
+/* =====================================================
+   MODAL
+===================================================== */
 
 .modal{
     position:fixed;
+
     inset:0;
+
     z-index:5000;
 
-    background:rgba(0,0,0,.9);
+    background:
+        rgba(0,0,0,.9);
 
     display:none;
 
     align-items:center;
+
     justify-content:center;
 
     padding:20px;
@@ -713,16 +866,20 @@ footer{
     width:min(850px,100%);
 
     background:#13161f;
+
     border-radius:10px;
+
     overflow:hidden;
 
-    box-shadow:0 25px 80px #000;
+    box-shadow:
+        0 25px 80px #000;
 }
 
 .modal-banner{
     min-height:330px;
 
     display:flex;
+
     align-items:flex-end;
 
     padding:35px;
@@ -746,6 +903,7 @@ footer{
     content:"";
 
     position:absolute;
+
     inset:0;
 
     background:
@@ -757,16 +915,19 @@ footer{
 
 .modal-content{
     position:relative;
+
     z-index:2;
 }
 
 .modal-content h2{
     font-size:38px;
+
     margin-bottom:10px;
 }
 
 .modal-content p{
     color:#babfca;
+
     line-height:1.5;
 }
 
@@ -780,12 +941,15 @@ footer{
     height:38px;
 
     border:0;
+
     border-radius:50%;
 
     background:#20232d;
+
     color:#fff;
 
     font-size:23px;
+
     cursor:pointer;
 
     z-index:10;
@@ -793,14 +957,20 @@ footer{
 
 .modal-actions{
     display:flex;
+
     gap:10px;
+
     padding:22px;
 }
 
-/* ================= SEARCH ================= */
+
+/* =====================================================
+   SEARCH
+===================================================== */
 
 .search-overlay{
     position:fixed;
+
     inset:0;
 
     z-index:6000;
@@ -808,11 +978,13 @@ footer{
     display:none;
 
     align-items:flex-start;
+
     justify-content:center;
 
     padding-top:90px;
 
-    background:rgba(0,0,0,.92);
+    background:
+        rgba(0,0,0,.92);
 
     backdrop-filter:blur(12px);
 }
@@ -826,7 +998,9 @@ footer{
 
     background:#10131c;
 
-    border:1px solid #292e3d;
+    border:
+        1px solid
+        #292e3d;
 
     border-radius:14px;
 
@@ -837,6 +1011,7 @@ footer{
     display:flex;
 
     align-items:center;
+
     justify-content:space-between;
 
     margin-bottom:25px;
@@ -855,22 +1030,32 @@ footer{
     height:40px;
 
     border:0;
+
     border-radius:50%;
 
     background:#20242f;
+
     color:#fff;
 
     font-size:23px;
+
     cursor:pointer;
+}
+
+.close-search:hover{
+    background:#e50914;
 }
 
 .big-search{
     display:flex;
+
     align-items:center;
 
     background:#181c27;
 
-    border:2px solid #343b4d;
+    border:
+        2px solid
+        #343b4d;
 
     border-radius:10px;
 
@@ -889,9 +1074,11 @@ footer{
     height:58px;
 
     border:0;
+
     outline:0;
 
     background:transparent;
+
     color:#fff;
 
     padding:0 18px;
@@ -899,16 +1086,23 @@ footer{
     font-size:18px;
 }
 
+.big-search input::placeholder{
+    color:#6d7484;
+}
+
 .big-search button{
     width:110px;
+
     height:58px;
 
     border:0;
 
     background:#e50914;
+
     color:#fff;
 
     font-size:14px;
+
     font-weight:bold;
 
     cursor:pointer;
@@ -917,7 +1111,8 @@ footer{
 .search-results{
     display:grid;
 
-    grid-template-columns:repeat(5,1fr);
+    grid-template-columns:
+        repeat(5,1fr);
 
     gap:12px;
 
@@ -938,12 +1133,15 @@ footer{
 
 .search-result-card:hover{
     transform:translateY(-4px);
+
+    background:#202531;
 }
 
 .search-result-poster{
     height:180px;
 
     position:relative;
+
     overflow:hidden;
 }
 
@@ -961,7 +1159,10 @@ footer{
     padding:35px;
 }
 
-/* ================= VEZI TOT ================= */
+
+/* =====================================================
+   VEZI TOT
+===================================================== */
 
 .all-movies-page{
     position:fixed;
@@ -987,6 +1188,7 @@ footer{
     display:flex;
 
     align-items:center;
+
     gap:25px;
 
     margin-bottom:35px;
@@ -1000,6 +1202,7 @@ footer{
     border:0;
 
     background:#191d27;
+
     color:#fff;
 
     padding:11px 18px;
@@ -1011,7 +1214,23 @@ footer{
     font-weight:bold;
 }
 
-/* ================= SERIALE ================= */
+.back-button:hover{
+    background:#e50914;
+}
+
+.all-movies-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(6,1fr);
+
+    gap:18px;
+}
+
+
+/* =====================================================
+   SERIALE
+===================================================== */
 
 .series-page{
     position:fixed;
@@ -1041,6 +1260,7 @@ footer{
     border:0;
 
     background:#20242f;
+
     color:#fff;
 
     padding:11px 20px;
@@ -1052,8 +1272,13 @@ footer{
     margin-bottom:25px;
 }
 
+.series-back:hover{
+    background:#e50914;
+}
+
 .series-top h1{
     font-size:48px;
+
     margin-bottom:8px;
 }
 
@@ -1061,7 +1286,10 @@ footer{
     color:#858d9d;
 }
 
-/* ================= SEZOANE ================= */
+
+/* =====================================================
+   SEZOANE
+===================================================== */
 
 .season-buttons,
 .lucifer-season-buttons{
@@ -1076,9 +1304,12 @@ footer{
 
 .season-button,
 .lucifer-season-card{
-    border:1px solid #303646;
+    border:
+        1px solid
+        #303646;
 
     background:#151923;
+
     color:#fff;
 
     padding:12px 18px;
@@ -1088,6 +1319,7 @@ footer{
     cursor:pointer;
 
     font-size:14px;
+
     font-weight:bold;
 
     transition:.2s;
@@ -1098,15 +1330,21 @@ footer{
 .lucifer-season-card:hover,
 .lucifer-season-card.active{
     background:#e50914;
+
     border-color:#e50914;
 }
 
-/* ================= EPISOADE ================= */
+
+/* =====================================================
+   EPISOADE
+===================================================== */
 
 .episodes-title,
 .lucifer-episodes-title{
     font-size:25px;
+
     font-weight:bold;
+
     margin-bottom:15px;
 }
 
@@ -1123,7 +1361,9 @@ footer{
 .episode{
     background:#11151f;
 
-    border:1px solid #252b39;
+    border:
+        1px solid
+        #252b39;
 
     border-radius:8px;
 
@@ -1139,8 +1379,6 @@ footer{
 
     border-color:#ff1744;
 }
-
-/* O DATĂ APĂSAT = ROȘU */
 
 .episode.active{
     background:#e50914;
@@ -1179,7 +1417,10 @@ footer{
     margin-top:7px;
 }
 
-/* ================= VIDEO PLAYER ================= */
+
+/* =====================================================
+   VIDEO PLAYER
+===================================================== */
 
 .video-player{
     position:fixed;
@@ -1191,6 +1432,7 @@ footer{
     display:none;
 
     align-items:center;
+
     justify-content:center;
 
     background:#000;
@@ -1237,209 +1479,16 @@ footer{
     background:#e50914;
 }
 
-/* ================= PLATA ================= */
 
-.payment-page{
-    position:fixed;
-
-    inset:0;
-
-    z-index:12000;
-
-    display:none;
-
-    align-items:center;
-    justify-content:center;
-
-    padding:20px;
-
-    background:#07080d;
-
-    overflow-y:auto;
-}
-
-.payment-page.show{
-    display:flex;
-}
-
-.payment-box{
-    width:min(520px,100%);
-
-    background:#11141d;
-
-    border:1px solid #292e3d;
-
-    border-radius:16px;
-
-    padding:30px;
-
-    position:relative;
-}
-
-.payment-close{
-    position:absolute;
-
-    right:16px;
-    top:16px;
-
-    width:40px;
-    height:40px;
-
-    border:0;
-
-    border-radius:50%;
-
-    background:#20242f;
-
-    color:#fff;
-
-    font-size:23px;
-
-    cursor:pointer;
-}
-
-.payment-logo{
-    font-size:25px;
-
-    font-weight:1000;
-
-    letter-spacing:3px;
-
-    margin-bottom:20px;
-
-    color:#ff1744;
-}
-
-.payment-box h1{
-    font-size:32px;
-
-    margin-bottom:20px;
-}
-
-.payment-ticket{
-    display:flex;
-
-    justify-content:space-between;
-
-    gap:20px;
-
-    padding:18px;
-
-    border-radius:10px;
-
-    background:#191d28;
-
-    border:1px solid #303646;
-
-    margin-bottom:25px;
-}
-
-.payment-ticket div{
-    display:flex;
-
-    flex-direction:column;
-
-    gap:6px;
-}
-
-.payment-ticket span{
-    color:#777f90;
-
-    font-size:12px;
-}
-
-.payment-ticket strong{
-    font-size:17px;
-}
-
-.payment-ticket div:last-child strong{
-    color:#ff1744;
-
-    font-size:21px;
-}
-
-.payment-box label{
-    display:block;
-
-    color:#aab0bd;
-
-    font-size:12px;
-
-    font-weight:bold;
-
-    margin-bottom:7px;
-
-    margin-top:15px;
-}
-
-.payment-box input{
-    width:100%;
-
-    height:50px;
-
-    padding:0 14px;
-
-    border-radius:8px;
-
-    border:1px solid #303646;
-
-    outline:none;
-
-    background:#181c27;
-
-    color:#fff;
-
-    font-size:15px;
-}
-
-.payment-row{
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:12px;
-}
-
-.pay-button{
-    width:100%;
-
-    height:52px;
-
-    border:0;
-
-    border-radius:8px;
-
-    background:#e50914;
-
-    color:#fff;
-
-    font-size:15px;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    margin-top:25px;
-}
-
-.payment-message{
-    text-align:center;
-
-    font-size:13px;
-
-    color:#7f8798;
-
-    margin-top:15px;
-
-    min-height:18px;
-}
-
-/* ================= TOAST ================= */
+/* =====================================================
+   TOAST
+===================================================== */
 
 .toast{
     position:fixed;
 
     left:50%;
+
     bottom:30px;
 
     transform:
@@ -1448,7 +1497,9 @@ footer{
 
     background:#191d28;
 
-    border:1px solid #303646;
+    border:
+        1px solid
+        #303646;
 
     color:#fff;
 
@@ -1456,7 +1507,7 @@ footer{
 
     border-radius:8px;
 
-    z-index:25000;
+    z-index:40000;
 
     opacity:0;
 
@@ -1473,33 +1524,49 @@ footer{
         translateY(0);
 }
 
-/* ================= RESPONSIVE ================= */
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
 
 @media(max-width:1200px){
 
     .movies{
-        grid-template-columns:repeat(4,1fr);
+        grid-template-columns:
+            repeat(4,1fr);
     }
 
     .search-results{
-        grid-template-columns:repeat(4,1fr);
+        grid-template-columns:
+            repeat(4,1fr);
     }
+
+    .all-movies-grid{
+        grid-template-columns:
+            repeat(4,1fr);
+    }
+
 }
 
 @media(max-width:850px){
 
     .sidebar{
         width:75px;
+
         padding:25px 10px;
     }
 
     .logo{
         font-size:0;
+
+        margin-bottom:35px;
     }
 
     .logo::after{
         content:"C";
+
         font-size:28px;
+
         color:#ff1744;
     }
 
@@ -1520,27 +1587,43 @@ footer{
     }
 
     .movies{
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:
+            repeat(3,1fr);
     }
 
     .search-results{
-        grid-template-columns:repeat(3,1fr);
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .all-movies-grid{
+        grid-template-columns:
+            repeat(3,1fr);
     }
 
     .episodes,
     .lucifer-episodes{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
+
 }
 
 @media(max-width:600px){
 
     .movies{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .search-results{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:
+            repeat(2,1fr);
+    }
+
+    .all-movies-grid{
+        grid-template-columns:
+            repeat(2,1fr);
     }
 
     .episodes,
@@ -1548,147 +1631,152 @@ footer{
         grid-template-columns:1fr;
     }
 
-    .payment-ticket{
-        flex-direction:column;
-    }
 }
+
+
+/* =====================================================
+   SFÂRȘIT CSS
+===================================================== */
 
 </style>
 </head>
 
+
 <body>
 
-<!-- ================= SIDEBAR ================= -->
+
+<!-- =====================================================
+     SIDEBAR
+===================================================== -->
 
 <aside class="sidebar">
 
-<div class="logo">
-CINEPLEX
-</div>
+    <div class="logo">
+        CINEPLEX
+    </div>
 
-<div class="menu-title">
-MENIU
-</div>
+    <div class="menu-title">
+        MENIU
+    </div>
 
-<nav class="menu">
+    <nav class="menu">
 
-<a href="#acasa" class="active">
-<span class="icon">⌂</span>
-<span>Acasă</span>
-</a>
+        <a href="#acasa" class="active">
+            <span class="icon">⌂</span>
+            <span>Acasă</span>
+        </a>
 
-<a href="#" id="openSearch">
-<span class="icon">⌕</span>
-<span>Căutare</span>
-</a>
+        <a href="#" id="openSearch">
+            <span class="icon">⌕</span>
+            <span>Căutare</span>
+        </a>
 
-<a href="#popular">
-<span class="icon">★</span>
-<span>Popular</span>
-</a>
+        <a href="#popular">
+            <span class="icon">★</span>
+            <span>Popular</span>
+        </a>
 
-<a href="#bilete">
-<span class="icon">▣</span>
-<span>Bilete</span>
-</a>
+        <a href="#lista">
+            <span class="icon">♡</span>
+            <span>Lista mea</span>
+        </a>
 
-<a href="#lista">
-<span class="icon">♡</span>
-<span>Lista mea</span>
-</a>
+    </nav>
 
-</nav>
+    <div class="sidebar-bottom">
 
-<div class="sidebar-bottom">
+        <div class="profile-small">
 
-<div class="profile-small">
+            <div class="avatar">
+                C
+            </div>
 
-<div class="avatar">
-C
-</div>
+            <div>
 
-<div>
+                <div class="profile-name">
+                    Cristi
+                </div>
 
-<div class="profile-name">
-Cristi
-</div>
+                <div class="profile-status">
+                    CINEPLEX
+                </div>
 
-<div class="profile-status">
-CINEPLEX
-</div>
+            </div>
 
-</div>
+        </div>
 
-</div>
-
-</div>
+    </div>
 
 </aside>
 
 
-<!-- ================= MAIN ================= -->
+<!-- =====================================================
+     MAIN
+===================================================== -->
 
 <div class="main">
 
 <header class="topbar">
 
-<div class="page-title">
-CINEPLEX
-</div>
+    <div class="page-title">
+        CINEPLEX
+    </div>
 
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section
-class="hero"
-id="acasa"
+    class="hero"
+    id="acasa"
 >
 
-<div class="hero-content">
+    <div class="hero-content">
 
-<div class="hero-badge">
-CINEPLEX ORIGINAL
-</div>
+        <div class="hero-badge">
+            CINEPLEX ORIGINAL
+        </div>
 
-<h1>
-THE LAST<br>
-<span>WAVE</span>
-</h1>
+        <h1>
+            THE LAST<br>
+            <span>WAVE</span>
+        </h1>
 
-<div class="hero-info">
-<span>2026</span>
-<span>16+</span>
-<span>4K</span>
-<span>9.4</span>
-</div>
+        <div class="hero-info">
+            <span>2026</span>
+            <span>16+</span>
+            <span>4K</span>
+            <span>9.4</span>
+        </div>
 
-<p class="hero-description">
-O aventură spectaculoasă în care o echipă
-trebuie să supraviețuiască celui mai mare
-val creat vreodată.
-</p>
+        <p class="hero-description">
+            O aventură spectaculoasă în care o echipă
+            trebuie să supraviețuiască celui mai mare
+            val creat vreodată.
+        </p>
 
-<div class="buttons">
+        <div class="buttons">
 
-<button
-class="btn watch"
-onclick="openMovie('THE LAST WAVE')"
->
-Redă
-</button>
+            <button
+                class="btn watch"
+                onclick="openMovie('THE LAST WAVE')"
+            >
+                Redă
+            </button>
 
-<button
-class="btn more"
-onclick="openMovie('THE LAST WAVE')"
->
-Informații
-</button>
+            <button
+                class="btn more"
+                onclick="openMovie('THE LAST WAVE')"
+            >
+                Informații
+            </button>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
@@ -1696,356 +1784,280 @@ Informații
 <main class="content">
 
 
-<!-- ================= POPULAR ================= -->
+<!-- =====================================================
+     POPULAR
+===================================================== -->
 
 <section
-class="section"
-id="popular"
+    class="section"
+    id="popular"
 >
 
-<div class="section-title">
+    <div class="section-title">
 
-<div>
-Populare on
-<span>CINEPLEX</span>
-</div>
+        <div>
+            Populare on
+            <span>CINEPLEX</span>
+        </div>
 
-<button
-class="see-all"
-onclick="openAllMovies()"
->
-Vezi tot
-</button>
+        <button
+            class="see-all"
+            onclick="openAllMovies()"
+        >
+            Vezi tot
+        </button>
 
-</div>
+    </div>
 
 
-<div class="movies">
+    <div class="movies">
 
 
-<!-- ELITE -->
+        <!-- ELITE -->
 
-<div
-class="card"
-data-title="ELITE"
-data-meta="Serial • 8 sezoane"
-data-poster="p1"
-onclick="openMovie('ELITE')"
->
+        <div
+            class="card"
+            data-title="ELITE"
+            data-meta="Serial • 8 sezoane"
+            data-poster="p1"
+            onclick="openMovie('ELITE')"
+        >
 
-<div class="poster p1"></div>
+            <div class="poster p1"></div>
 
-<div class="card-info">
+            <div class="card-info">
 
-<div class="card-title">
-ELITE
-</div>
+                <div class="card-title">
+                    ELITE
+                </div>
 
-<div class="card-meta">
-Serial • 8 sezoane
-</div>
+                <div class="card-meta">
+                    Serial • 8 sezoane
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- AVATAR -->
+        <!-- AVATAR -->
 
-<div
-class="card"
-data-title="AVATAR"
-data-meta="SF • 9.0"
-data-poster="p2"
-onclick="openMovie('AVATAR')"
->
+        <div
+            class="card"
+            data-title="AVATAR"
+            data-meta="SF • 9.0"
+            data-poster="p2"
+            onclick="openMovie('AVATAR')"
+        >
 
-<div class="poster p2"></div>
+            <div class="poster p2"></div>
 
-<div class="card-info">
+            <div class="card-info">
 
-<div class="card-title">
-AVATAR
-</div>
+                <div class="card-title">
+                    AVATAR
+                </div>
 
-<div class="card-meta">
-SF • 9.0
-</div>
+                <div class="card-meta">
+                    SF • 9.0
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- LUCIFER -->
+        <!-- LUCIFER -->
 
-<div
-class="card"
-data-title="LUCIFER"
-data-meta="Serial • 6 sezoane"
-data-poster="p3"
-onclick="openMovie('LUCIFER')"
->
+        <div
+            class="card"
+            data-title="LUCIFER"
+            data-meta="Serial • 6 sezoane"
+            data-poster="p3"
+            onclick="openMovie('LUCIFER')"
+        >
 
-<div class="poster p3"></div>
+            <div class="poster p3"></div>
 
-<div class="card-info">
+            <div class="card-info">
 
-<div class="card-title">
-LUCIFER
-</div>
+                <div class="card-title">
+                    LUCIFER
+                </div>
 
-<div class="card-meta">
-Serial • 6 sezoane
-</div>
+                <div class="card-meta">
+                    Serial • 6 sezoane
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- MONEY HEIST -->
+        <!-- MONEY HEIST -->
 
-<div
-class="card"
-data-title="MONEY HEIST"
-data-meta="Crime • 8.7"
-data-poster="p4"
-onclick="openMovie('MONEY HEIST')"
->
+        <div
+            class="card"
+            data-title="MONEY HEIST"
+            data-meta="Crime • 8.7"
+            data-poster="p4"
+            onclick="openMovie('MONEY HEIST')"
+        >
 
-<div class="poster p4"></div>
+            <div class="poster p4"></div>
 
-<div class="card-info">
+            <div class="card-info">
 
-<div class="card-title">
-MONEY HEIST
-</div>
+                <div class="card-title">
+                    MONEY HEIST
+                </div>
 
-<div class="card-meta">
-Crime • 8.7
-</div>
+                <div class="card-meta">
+                    Crime • 8.7
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- WOODWALKERS -->
+        <!-- WOODWALKERS -->
 
-<div
-class="card"
-data-title="WOODWALKERS"
-data-meta="Aventură • 8.6"
-data-poster="p5"
-onclick="openMovie('WOODWALKERS')"
->
+        <div
+            class="card"
+            data-title="WOODWALKERS"
+            data-meta="Aventură • 8.6"
+            data-poster="p5"
+            onclick="openMovie('WOODWALKERS')"
+        >
 
-<div class="poster p5"></div>
+            <div class="poster p5"></div>
 
-<div class="card-info">
+            <div class="card-info">
 
-<div class="card-title">
-WOODWALKERS
-</div>
+                <div class="card-title">
+                    WOODWALKERS
+                </div>
 
-<div class="card-meta">
-Aventură • 8.6
-</div>
+                <div class="card-meta">
+                    Aventură • 8.6
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- PRISMA -->
+        <!-- PRISMA -->
 
-<div
-class="card"
-data-title="PRISMA"
-data-meta="Mystery • 8.4"
-data-poster="p6"
-onclick="openMovie('PRISMA')"
->
+        <div
+            class="card"
+            data-title="PRISMA"
+            data-meta="Mystery • 8.4"
+            data-poster="p6"
+            onclick="openMovie('PRISMA')"
+        >
 
-<div class="poster p6"></div>
+            <div class="poster p6"></div>
 
-<div class="card-info">
+            <div class="card-info">
 
-<div class="card-title">
-PRISMA
-</div>
+                <div class="card-title">
+                    PRISMA
+                </div>
 
-<div class="card-meta">
-Mystery • 8.4
-</div>
+                <div class="card-meta">
+                    Mystery • 8.4
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
 
-<!-- LEVITICUS -->
+        <!-- LEVITICUS -->
 
-<div
-class="card locked-card"
-data-title="LEVITICUS"
-data-meta="Romance/Horror • 2026"
-data-poster="p9"
->
+        <div
+            class="card locked-card"
+            data-title="LEVITICUS"
+            data-meta="Romance/Horror • 2026"
+            data-poster="p9"
+        >
 
-<div class="poster p9">
+            <div class="poster p9">
 
-<div class="lock-overlay"></div>
+                <div class="lock-overlay"></div>
 
-<div class="lock-image">
+                <div class="lock-image">
 
-<div class="lock-shackle"></div>
+                    <div class="lock-shackle"></div>
 
-<div class="lock-body">
+                    <div class="lock-body">
 
-<div class="lock-keyhole"></div>
+                        <div class="lock-keyhole"></div>
 
-</div>
+                    </div>
 
-</div>
+                </div>
 
-<div class="coming-soon">
-COMING SOON
-</div>
+                <div class="coming-soon">
+                    COMING SOON
+                </div>
 
-</div>
+            </div>
 
-<div class="card-info">
+            <div class="card-info">
 
-<div class="card-title">
-LEVITICUS
-</div>
+                <div class="card-title">
+                    LEVITICUS
+                </div>
 
-<div class="card-meta">
-Romance/Horror • 2026
-</div>
+                <div class="card-meta">
+                    Romance/Horror • 2026
+                </div>
 
-</div>
+            </div>
 
-</div>
+        </div>
 
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= BILETE ================= -->
+<!-- =====================================================
+     LISTA MEA
+===================================================== -->
 
 <section
-class="section"
-id="bilete"
+    class="section"
+    id="lista"
 >
 
-<div class="section-title">
+    <div class="section-title">
 
-<div>
-Bilete
-<span>CINEPLEX</span>
-</div>
+        <div>
+            Lista
+            <span>mea</span>
+        </div>
 
-</div>
-
-
-<div class="movies">
-
-<div class="card ticket-card">
-
-<div class="ticket-content">
-
-<div class="ticket-title">
-Bilet Standard
-</div>
-
-<div class="ticket-price">
-1.19 RON
-</div>
-
-<button
-class="ticket-button"
-onclick="
-buyTicket(
-'Bilet Standard',
-'1.19 RON'
-)
-"
->
-Cumpără
-</button>
-
-</div>
-
-</div>
+    </div>
 
 
-<div class="card ticket-card">
-
-<div class="ticket-content">
-
-<div class="ticket-title">
-Bilet Premium
-</div>
-
-<div class="ticket-price">
-99.204 RON
-</div>
-
-<button
-class="ticket-button"
-onclick="
-buyTicket(
-'Bilet Premium',
-'99.204 RON'
-)
-"
->
-Cumpără
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
+    <div
+        class="empty"
+        id="emptyList"
+    >
+        Filmele adăugate în lista ta
+        vor apărea aici.
+    </div>
 
 
-<!-- ================= LISTA MEA ================= -->
-
-<section
-class="section"
-id="lista"
->
-
-<div class="section-title">
-
-<div>
-Lista
-<span>mea</span>
-</div>
-
-</div>
-
-<div
-class="empty"
-id="emptyList"
->
-Filmele adăugate în lista ta
-vor apărea aici.
-</div>
-
-<div
-class="movies"
-id="myList"
-style="margin-top:15px"
-></div>
+    <div
+        class="movies"
+        id="myList"
+        style="margin-top:15px"
+    ></div>
 
 </section>
 
@@ -2054,440 +2066,303 @@ style="margin-top:15px"
 
 <footer>
 
-<div class="footer-logo">
-CINEPLEX
-</div>
+    <div class="footer-logo">
+        CINEPLEX
+    </div>
 
-<p>
-© 2026 CINEPLEX
-</p>
+    <p>
+        © 2026 CINEPLEX
+    </p>
 
 </footer>
 
 </div>
 
 
-<!-- ================= MODAL ================= -->
+<!-- =====================================================
+     MODAL
+===================================================== -->
 
 <div
-class="modal"
-id="movieModal"
+    class="modal"
+    id="movieModal"
 >
 
-<div class="modal-box">
+    <div class="modal-box">
 
-<button
-class="close"
-onclick="closeMovie()"
->
-×
-</button>
+        <button
+            class="close"
+            onclick="closeMovie()"
+        >
+            ×
+        </button>
 
-<div class="modal-banner">
+        <div class="modal-banner">
 
-<div class="modal-content">
+            <div class="modal-content">
 
-<h2 id="modalTitle">
-Film
-</h2>
+                <h2 id="modalTitle">
+                    Film
+                </h2>
 
-<p>
-Descoperă acest titlu pe CINEPLEX.
-</p>
+                <p>
+                    Descoperă acest titlu pe CINEPLEX.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="modal-actions">
+
+            <button
+                class="btn red"
+                onclick="playMovie()"
+            >
+                Redă filmul
+            </button>
+
+            <button
+                class="btn more"
+                onclick="addToList()"
+            >
+                Lista mea
+            </button>
+
+        </div>
+
+    </div>
 
 </div>
 
-</div>
 
-<div class="modal-actions">
-
-<button
-class="btn red"
-onclick="playMovie()"
->
-Redă filmul
-</button>
-
-<button
-class="btn more"
-onclick="addToList()"
->
-Lista mea
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ================= SEARCH ================= -->
+<!-- =====================================================
+     SEARCH
+===================================================== -->
 
 <div
-class="search-overlay"
-id="searchOverlay"
+    class="search-overlay"
+    id="searchOverlay"
 >
 
-<div class="search-window">
+    <div class="search-window">
 
-<div class="search-top">
+        <div class="search-top">
 
-<h2>
-Caută pe
-<span>CINEPLEX</span>
-</h2>
+            <h2>
+                Caută pe
+                <span>CINEPLEX</span>
+            </h2>
 
-<button
-class="close-search"
-id="closeSearch"
->
-×
-</button>
+            <button
+                class="close-search"
+                id="closeSearch"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <div class="big-search">
+
+            <input
+                id="bigSearchInput"
+                type="text"
+                placeholder="Caută un film sau serial..."
+                autocomplete="off"
+            >
+
+            <button
+                id="bigSearchButton"
+                type="button"
+            >
+                Căutare
+            </button>
+
+        </div>
+
+
+        <div
+            class="search-results"
+            id="searchResults"
+        ></div>
+
+    </div>
 
 </div>
 
 
-<div class="big-search">
-
-<input
-id="bigSearchInput"
-type="text"
-placeholder="Caută un film sau serial..."
-autocomplete="off"
->
-
-<button id="bigSearchButton">
-Căutare
-</button>
-
-</div>
-
+<!-- =====================================================
+     VEZI TOT
+===================================================== -->
 
 <div
-class="search-results"
-id="searchResults"
-></div>
+    class="all-movies-page"
+    id="allMoviesPage"
+>
+
+    <div class="all-movies-header">
+
+        <button
+            class="back-button"
+            onclick="closeAllMovies()"
+        >
+            Înapoi
+        </button>
+
+        <h1>
+            Populare on CINEPLEX
+        </h1>
+
+    </div>
+
+
+    <div
+        class="all-movies-grid"
+        id="allMoviesGrid"
+    ></div>
 
 </div>
 
-</div>
 
-
-<!-- ================= VEZI TOT ================= -->
+<!-- =====================================================
+     ELITE
+===================================================== -->
 
 <div
-class="all-movies-page"
-id="allMoviesPage"
+    class="series-page"
+    id="eliteSeries"
 >
 
-<div class="all-movies-header">
+    <div class="series-top">
 
-<button
-class="back-button"
-onclick="closeAllMovies()"
->
-Înapoi
-</button>
+        <button
+            class="series-back"
+            onclick="closeEliteSeries()"
+        >
+            Înapoi
+        </button>
 
-<h1>
-Populare on CINEPLEX
-</h1>
+        <h1>
+            ELITE
+        </h1>
+
+        <p>
+            Serial • 8 Sezoane • 64 Episoade
+        </p>
+
+    </div>
+
+
+    <div
+        class="season-buttons"
+        id="seasonButtons"
+    ></div>
+
+
+    <div
+        class="episodes-title"
+        id="episodesTitle"
+    >
+        Sezonul 1
+    </div>
+
+
+    <div
+        class="episodes"
+        id="episodes"
+    ></div>
 
 </div>
 
+
+<!-- =====================================================
+     LUCIFER
+===================================================== -->
 
 <div
-class="all-movies-grid"
-id="allMoviesGrid"
-></div>
+    class="series-page"
+    id="luciferSeries"
+>
+
+    <div class="series-top">
+
+        <button
+            class="series-back"
+            onclick="closeLuciferSeries()"
+        >
+            Înapoi
+        </button>
+
+        <h1>
+            LUCIFER
+        </h1>
+
+        <p>
+            Serial • 6 Sezoane
+        </p>
+
+    </div>
+
+
+    <div
+        class="lucifer-season-buttons"
+        id="luciferSeasons"
+    ></div>
+
+
+    <div
+        class="lucifer-episodes-title"
+        id="luciferEpisodesTitle"
+    >
+        Sezonul 1
+    </div>
+
+
+    <div
+        class="lucifer-episodes"
+        id="luciferEpisodes"
+    ></div>
 
 </div>
 
 
-<!-- ================= ELITE ================= -->
+<!-- =====================================================
+     VIDEO PLAYER
+===================================================== -->
 
 <div
-class="series-page"
-id="eliteSeries"
+    class="video-player"
+    id="videoPlayer"
 >
 
-<div class="series-top">
-
-<button
-class="series-back"
-onclick="closeEliteSeries()"
->
-Înapoi
-</button>
-
-<h1>
-ELITE
-</h1>
-
-<p>
-Serial • 8 Sezoane • 64 Episoade
-</p>
-
-</div>
-
-
-<div
-class="season-buttons"
-id="seasonButtons"
-></div>
-
-
-<div
-class="episodes-title"
-id="episodesTitle"
->
-Sezonul 1
-</div>
-
-
-<div
-class="episodes"
-id="episodes"
-></div>
-
-</div>
-
-
-<!-- ================= LUCIFER ================= -->
-
-<div
-class="series-page"
-id="luciferSeries"
->
-
-<div class="series-top">
-
-<button
-class="series-back"
-onclick="closeLuciferSeries()"
->
-Înapoi
-</button>
-
-<h1>
-LUCIFER
-</h1>
-
-<p>
-Serial • 6 Sezoane
-</p>
-
-</div>
-
-
-<div
-class="lucifer-season-buttons"
-id="luciferSeasons"
-></div>
-
-
-<div
-class="lucifer-episodes-title"
-id="luciferEpisodesTitle"
->
-Sezonul 1
-</div>
-
-
-<div
-class="lucifer-episodes"
-id="luciferEpisodes"
-></div>
-
-</div>
-
-
-<!-- ================= VIDEO PLAYER ================= -->
-
-<div
-class="video-player"
-id="videoPlayer"
->
-
-<button
-class="video-close"
-onclick="closeVideo()"
->
-×
-</button>
-
-
-<video
-id="eliteVideo"
-controls
-playsinline
-></video>
-
-</div>
-
-
-<!-- ================= PLATA ================= -->
-
-<div
-class="payment-page"
-id="paymentPage"
->
-
-<div class="payment-box">
-
-<button
-class="payment-close"
-onclick="closePayment()"
->
-×
-</button>
-
-
-<div class="payment-logo">
-CINEPLEX
-</div>
-
-
-<h1>
-Plată
-</h1>
-
-
-<div class="payment-ticket">
-
-<div>
-
-<span>
-Bilet
-</span>
-
-<strong
-id="paymentTicketName"
->
-Bilet Standard
-</strong>
-
-</div>
-
-
-<div>
-
-<span>
-Total
-</span>
-
-<strong
-id="paymentTicketPrice"
->
-1.19 RON
-</strong>
-
-</div>
-
-</div>
-
-
-<label>
-Nume
-</label>
-
-<input
-id="paymentName"
-type="text"
-placeholder="Numele tău"
->
-
-
-<label>
-Email
-</label>
-
-<input
-id="paymentEmail"
-type="email"
-placeholder="email@example.com"
->
-
-
-<label>
-Număr card
-</label>
-
-<input
-id="paymentCard"
-type="text"
-inputmode="numeric"
-maxlength="19"
-placeholder="0000 0000 0000 0000"
->
-
-
-<div class="payment-row">
-
-<div>
-
-<label>
-Expiră
-</label>
-
-<input
-id="paymentExpiry"
-type="text"
-maxlength="5"
-placeholder="MM/AA"
->
-
-</div>
-
-
-<div>
-
-<label>
-CVV
-</label>
-
-<input
-id="paymentCVV"
-type="password"
-inputmode="numeric"
-maxlength="4"
-placeholder="123"
->
-
-</div>
-
-</div>
-
-
-<button
-class="pay-button"
-onclick="processPayment()"
->
-Plătește acum
-</button>
-
-
-<div
-class="payment-message"
-id="paymentMessage"
-></div>
-
-</div>
+    <button
+        class="video-close"
+        onclick="closeVideo()"
+    >
+        ×
+    </button>
+
+    <video
+        id="eliteVideo"
+        controls
+        playsinline
+    ></video>
 
 </div>
 
 
 <div
-class="toast"
-id="toast"
+    class="toast"
+    id="toast"
 ></div>
 
 
 <script>
 
 /* =====================================================
-   MARCAJELE NU SE SALVEAZĂ
+   MARCAJE EPISOADE
 ===================================================== */
 
 const eliteWatched =
@@ -2502,6 +2377,7 @@ const luciferWatched =
 ===================================================== */
 
 let currentMovie = "";
+
 let toastTimer = null;
 
 
@@ -2567,6 +2443,7 @@ function openMovie(title){
         openEliteSeries();
 
         return;
+
     }
 
 
@@ -2575,6 +2452,7 @@ function openMovie(title){
         openLuciferSeries();
 
         return;
+
     }
 
 
@@ -2582,7 +2460,8 @@ function openMovie(title){
         .getElementById(
             "modalTitle"
         )
-        .textContent = title;
+        .textContent =
+        title;
 
 
     movieModal.classList.add(
@@ -2807,7 +2686,7 @@ function showEliteSeason(
 
 
 /* =====================================================
-   ELITE - O SINGURĂ MARCARE
+   ELITE MARCARE
 ===================================================== */
 
 function markEliteEpisode(
@@ -2844,7 +2723,7 @@ function markEliteEpisode(
 
 
 /* =====================================================
-   ELITE VIDEO + SUBTITRARE
+   ELITE VIDEO + VTT
 ===================================================== */
 
 function playEliteEpisode(
@@ -2885,8 +2764,8 @@ function playEliteEpisode(
         "src"
     );
 
-
-    video.innerHTML = "";
+    video.innerHTML =
+        "";
 
 
     video.src =
@@ -3191,7 +3070,7 @@ function showLuciferSeason(
 
 
 /* =====================================================
-   LUCIFER - O SINGURĂ MARCARE
+   LUCIFER MARCARE
 ===================================================== */
 
 function markLuciferEpisode(
@@ -3217,137 +3096,6 @@ function markLuciferEpisode(
         );
 
     }
-
-}
-
-
-/* =====================================================
-   BILETE
-===================================================== */
-
-function buyTicket(
-    name,
-    price
-){
-
-    document
-        .getElementById(
-            "paymentTicketName"
-        )
-        .textContent =
-        name;
-
-
-    document
-        .getElementById(
-            "paymentTicketPrice"
-        )
-        .textContent =
-        price;
-
-
-    document
-        .getElementById(
-            "paymentMessage"
-        )
-        .textContent =
-        "";
-
-
-    document
-        .getElementById(
-            "paymentPage"
-        )
-        .classList.add(
-            "show"
-        );
-
-}
-
-
-function closePayment(){
-
-    document
-        .getElementById(
-            "paymentPage"
-        )
-        .classList.remove(
-            "show"
-        );
-
-}
-
-
-function processPayment(){
-
-    const name =
-        document
-            .getElementById(
-                "paymentName"
-            )
-            .value
-            .trim();
-
-
-    const email =
-        document
-            .getElementById(
-                "paymentEmail"
-            )
-            .value
-            .trim();
-
-
-    const card =
-        document
-            .getElementById(
-                "paymentCard"
-            )
-            .value
-            .trim();
-
-
-    const expiry =
-        document
-            .getElementById(
-                "paymentExpiry"
-            )
-            .value
-            .trim();
-
-
-    const cvv =
-        document
-            .getElementById(
-                "paymentCVV"
-            )
-            .value
-            .trim();
-
-
-    const message =
-        document.getElementById(
-            "paymentMessage"
-        );
-
-
-    if(
-        !name ||
-        !email ||
-        !card ||
-        !expiry ||
-        !cvv
-    ){
-
-        message.textContent =
-            "Completează toate câmpurile.";
-
-        return;
-    }
-
-
-    message.textContent =
-        "Formular completat. Pentru o plată reală trebuie conectat un procesator de plăți securizat.";
 
 }
 
@@ -3396,7 +3144,12 @@ function addToList(){
 
         closeMovie();
 
+        showToast(
+            "Filmul este deja în Lista mea."
+        );
+
         return;
+
     }
 
 
@@ -3858,8 +3611,6 @@ document.addEventListener(
 
             closeLuciferSeries();
 
-            closePayment();
-
             closeVideo();
 
         }
@@ -3948,3 +3699,4 @@ function escapeHTML(text){
 
 </body>
 </html>
+```
